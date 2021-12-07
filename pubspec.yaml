@@ -15,6 +15,7 @@ dependencies:
 
   bloc: 8.0.1
   flutter_bloc: 8.0.0
+  freezed: 1.0.2
 
 dev_dependencies:
   flutter_test:
