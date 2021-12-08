@@ -19,7 +19,6 @@ class ProblemsCounter extends StatelessWidget {
             child: Text(
               problemsCount.toString(),
               style: const TextStyle(
-                color: Colors.white,
                 fontSize: 22.0,
                 fontWeight: FontWeight.w400,
               ),
@@ -27,7 +26,6 @@ class ProblemsCounter extends StatelessWidget {
           ),
           const Icon(
             Icons.warning,
-            color: Colors.white,
             size: 28.0,
           ),
         ],
