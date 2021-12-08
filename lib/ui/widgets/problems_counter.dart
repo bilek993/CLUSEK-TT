@@ -19,14 +19,17 @@ class ProblemsCounter extends StatelessWidget {
             child: Text(
               problemsCount.toString(),
               style: const TextStyle(
-                fontSize: 22.0,
+                fontSize: 16.0,
                 fontWeight: FontWeight.w400,
               ),
             ),
           ),
-          const Icon(
-            Icons.warning,
-            size: 28.0,
+          const Padding(
+            padding: EdgeInsets.only(top: 2.0),
+            child: Icon(
+              Icons.warning,
+              size: 24.0,
+            ),
           ),
         ],
       ),

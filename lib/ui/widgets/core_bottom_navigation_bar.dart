@@ -20,11 +20,11 @@ class CoreBottomNavigationBar extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsets.only(left: 24.0),
               child: Text(
                 AppLocalizations.of(context)!.applicationNameExtended,
                 style: const TextStyle(
-                  fontSize: 28.0,
+                  fontSize: 22.0,
                   fontWeight: FontWeight.w100,
                 ),
               ),
