@@ -22,6 +22,11 @@ class MyApp extends StatelessWidget {
         buttonTheme: Theme.of(context).buttonTheme.copyWith(
               buttonColor: AppColors.white,
             ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: AppColors.accentColorLight,
+          ),
+        ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
             primary: AppColors.white,

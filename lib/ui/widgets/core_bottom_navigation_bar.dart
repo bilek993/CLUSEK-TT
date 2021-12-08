@@ -14,7 +14,7 @@ class CoreBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.accentColorDart,
+      color: AppColors.accentColorDark,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -33,7 +33,7 @@ class CoreBottomNavigationBar extends StatelessWidget {
             const ProblemsCounter(problemsCount: 5),
             Padding(
               padding: const EdgeInsets.all(3.0),
-              child: OutlinedButton(
+              child: ElevatedButton(
                 onPressed: onConvertButtonPressed,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 8.0),
