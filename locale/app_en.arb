@@ -1,6 +1,4 @@
 {
-    "helloWorld": "en",
-    "@helloWorld": {
-      "description": "Example text."
-    }
+    "convertButton": "Convert",
+    "applicationNameExtended": "CLUSEK-TT (Texture Tool)"
 }

@@ -16,9 +16,9 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              const Text(
-                'CLUSEK-TT (Texture Tool)',
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.applicationNameExtended,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 28.0,
                   fontWeight: FontWeight.w100,
@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 8.0),
                     child: Text(
-                      AppLocalizations.of(context)!.helloWorld,
+                      AppLocalizations.of(context)!.convertButton,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16.0,
