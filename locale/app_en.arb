@@ -1,0 +1,6 @@
+{
+    "helloWorld": "en",
+    "@helloWorld": {
+      "description": "Example text."
+    }
+}
