@@ -1,4 +1,4 @@
-import 'package:clusek_tt/resources/app_colors.dart';
+import 'package:clusek_tt/ui/other/shadow_decoration.dart';
 import 'package:clusek_tt/ui/widgets/problems_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -14,7 +14,7 @@ class CoreBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.accentColorDark,
+      decoration: ShadowDecoration(radius: 0),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
