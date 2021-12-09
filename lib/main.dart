@@ -1,14 +1,19 @@
 import 'package:clusek_tt/resources/app_colors.dart';
+import 'package:clusek_tt/services/locator.dart';
 import 'package:clusek_tt/ui/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:logger/logger.dart';
 
 void main() {
-  runApp(const MyApp());
+  Locator.config();
+
+  locator.get<Logger>().d('Starting CLUSEK-TT application...');
+  runApp(const ClusekTTApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class ClusekTTApp extends StatelessWidget {
+  const ClusekTTApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
