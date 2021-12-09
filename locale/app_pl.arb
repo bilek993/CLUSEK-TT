@@ -1,4 +1,5 @@
 {
     "convertButton": "Konwertuj",
-    "applicationNameExtended": "CLUSEK-TT (Texture Tool)"
+    "applicationNameExtended": "CLUSEK-TT (Texture Tool)",
+    "imagePreviewMissing": "PODGLĄD NIEDOSTĘPNY"
 }
