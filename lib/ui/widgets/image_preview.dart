@@ -10,7 +10,7 @@ class ImagePreview extends StatelessWidget {
   final Logger _log = locator.get();
   final String? pathToFile;
 
-  const ImagePreview({Key? key, this.pathToFile}) : super(key: key);
+  ImagePreview({Key? key, this.pathToFile}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
