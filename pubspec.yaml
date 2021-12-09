@@ -18,15 +18,17 @@ dependencies:
 
   bloc: 8.0.1
   flutter_bloc: 8.0.0
-  freezed: 1.0.2
   get_it: 7.2.0
   logger: 1.1.0
   intl: 0.17.0
+  freezed_annotation: 1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  freezed: 1.0.2
+  build_runner: 2.1.5
   flutter_lints: 1.0.4
   bloc_test: 9.0.1
 
