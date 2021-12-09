@@ -7,8 +7,8 @@ class Locator {
   Locator._();
 
   static void config() {
-    locator.reset();
-
+    locator.reset(dispose: false);
+    
     locator
         .registerLazySingleton<Logger>(() => Logger(printer: PrettyPrinter()));
   }
