@@ -1,5 +1,11 @@
 {
     "convertButton": "Konwertuj",
     "applicationNameExtended": "CLUSEK-TT (Texture Tool)",
-    "imagePreviewMissing": "PODGLĄD NIEDOSTĘPNY"
+    "imagePreviewMissing": "PODGLĄD NIEDOSTĘPNY",
+    "presetsSubpageTitle": "Ustawienia wstępne",
+    "filesSubpageTitle": "Pliki",
+    "inputSubpageTitle": "Dane wejściowe",
+    "mipmapsSubpageTitle": "MipMapping",
+    "compressionSubpageTitle": "Kompresja",
+    "outputSubpageTitle": "Dane wyjściowe"
 }
