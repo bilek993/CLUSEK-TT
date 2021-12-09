@@ -67,12 +67,23 @@ class HomePage extends StatelessWidget {
   List<SubpageItem> _getSubpageItems() {
     return [
       SubpageItem(
-          title: 'I/O',
-          child: Column(
-            children: const [
-              Text('bbb'),
-            ],
-          ))
+        title: 'I/O',
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text('bbb'),
+          ],
+        ),
+      ),
+      SubpageItem(
+        title: 'Compression',
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text('bbb'),
+          ],
+        ),
+      ),
     ];
   }
 }

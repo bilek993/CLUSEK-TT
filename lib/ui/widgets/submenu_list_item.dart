@@ -19,7 +19,7 @@ class SubmenuListItem extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
           child: Text(textValue),
         ),
       ),

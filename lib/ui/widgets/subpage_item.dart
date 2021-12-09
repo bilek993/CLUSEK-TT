@@ -12,6 +12,9 @@ class SubpageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return child;
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: child,
+    );
   }
 }
