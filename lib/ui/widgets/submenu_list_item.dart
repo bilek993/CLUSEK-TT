@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class SubmenuListItem extends StatelessWidget {
   final String textValue;
   final bool fillBackground;
+  final VoidCallback? onTap;
 
   const SubmenuListItem({
     Key? key,
     this.textValue = '',
     this.fillBackground = false,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class SubmenuListItem extends StatelessWidget {
       color:
           fillBackground ? AppColors.separatorColor : AppColors.accentColorDark,
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
           child: Text(textValue),

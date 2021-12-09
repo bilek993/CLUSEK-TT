@@ -17,9 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CoreStateTearOff {
   const _$CoreStateTearOff();
 
-  _Initial initial({bool testField = true}) {
+  _Initial initial({int selectedSubpage = 0}) {
     return _Initial(
-      testField: testField,
+      selectedSubpage: selectedSubpage,
     );
   }
 }
@@ -29,21 +29,21 @@ const $CoreState = _$CoreStateTearOff();
 
 /// @nodoc
 mixin _$CoreState {
-  bool get testField => throw _privateConstructorUsedError;
+  int get selectedSubpage => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool testField) initial,
+    required TResult Function(int selectedSubpage) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool testField)? initial,
+    TResult Function(int selectedSubpage)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool testField)? initial,
+    TResult Function(int selectedSubpage)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,7 +73,7 @@ mixin _$CoreState {
 abstract class $CoreStateCopyWith<$Res> {
   factory $CoreStateCopyWith(CoreState value, $Res Function(CoreState) then) =
       _$CoreStateCopyWithImpl<$Res>;
-  $Res call({bool testField});
+  $Res call({int selectedSubpage});
 }
 
 /// @nodoc
@@ -86,13 +86,13 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? testField = freezed,
+    Object? selectedSubpage = freezed,
   }) {
     return _then(_value.copyWith(
-      testField: testField == freezed
-          ? _value.testField
-          : testField // ignore: cast_nullable_to_non_nullable
-              as bool,
+      selectedSubpage: selectedSubpage == freezed
+          ? _value.selectedSubpage
+          : selectedSubpage // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -102,7 +102,7 @@ abstract class _$InitialCopyWith<$Res> implements $CoreStateCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
   @override
-  $Res call({bool testField});
+  $Res call({int selectedSubpage});
 }
 
 /// @nodoc
@@ -116,13 +116,13 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? testField = freezed,
+    Object? selectedSubpage = freezed,
   }) {
     return _then(_Initial(
-      testField: testField == freezed
-          ? _value.testField
-          : testField // ignore: cast_nullable_to_non_nullable
-              as bool,
+      selectedSubpage: selectedSubpage == freezed
+          ? _value.selectedSubpage
+          : selectedSubpage // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -130,15 +130,15 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({this.testField = true});
+  const _$_Initial({this.selectedSubpage = 0});
 
-  @JsonKey(defaultValue: true)
+  @JsonKey(defaultValue: 0)
   @override
-  final bool testField;
+  final int selectedSubpage;
 
   @override
   String toString() {
-    return 'CoreState.initial(testField: $testField)';
+    return 'CoreState.initial(selectedSubpage: $selectedSubpage)';
   }
 
   @override
@@ -146,12 +146,13 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Initial &&
-            const DeepCollectionEquality().equals(other.testField, testField));
+            const DeepCollectionEquality()
+                .equals(other.selectedSubpage, selectedSubpage));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(testField));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(selectedSubpage));
 
   @JsonKey(ignore: true)
   @override
@@ -161,27 +162,27 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool testField) initial,
+    required TResult Function(int selectedSubpage) initial,
   }) {
-    return initial(testField);
+    return initial(selectedSubpage);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool testField)? initial,
+    TResult Function(int selectedSubpage)? initial,
   }) {
-    return initial?.call(testField);
+    return initial?.call(selectedSubpage);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool testField)? initial,
+    TResult Function(int selectedSubpage)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(testField);
+      return initial(selectedSubpage);
     }
     return orElse();
   }
@@ -216,10 +217,10 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements CoreState {
-  const factory _Initial({bool testField}) = _$_Initial;
+  const factory _Initial({int selectedSubpage}) = _$_Initial;
 
   @override
-  bool get testField;
+  int get selectedSubpage;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>

@@ -1,3 +1,4 @@
+import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
 import 'package:clusek_tt/resources/app_colors.dart';
 import 'package:clusek_tt/ui/other/shadow_decoration.dart';
 import 'package:clusek_tt/ui/widgets/core_bottom_navigation_bar.dart';
@@ -5,6 +6,7 @@ import 'package:clusek_tt/ui/widgets/image_preview.dart';
 import 'package:clusek_tt/ui/widgets/submenu_list_item.dart';
 import 'package:clusek_tt/ui/widgets/subpage_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +14,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var subpageItems = _getSubpageItems();
+    var cubitCore = BlocProvider.of<CoreCubit>(context);
+
     return Scaffold(
       body: Row(
         children: [
@@ -26,21 +30,32 @@ class HomePage extends StatelessWidget {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: ListView.builder(
-                        itemCount: subpageItems.length,
-                        itemBuilder: (context, index) => SubmenuListItem(
-                          textValue: subpageItems[index].title,
-                          fillBackground: index == 0, // TODO: Change this!
-                        ),
+                      child: BlocBuilder<CoreCubit, CoreState>(
+                        bloc: cubitCore,
+                        builder: (context, state) {
+                          return ListView.builder(
+                            itemCount: subpageItems.length,
+                            itemBuilder: (context, index) => SubmenuListItem(
+                              textValue: subpageItems[index].title,
+                              fillBackground: index == state.selectedSubpage,
+                              onTap: () => cubitCore.changePage(index),
+                            ),
+                          );
+                        },
                       ),
                     ),
                     Container(
                       width: 1.0,
                       color: AppColors.separatorColor,
                     ),
-                    Expanded(
-                      flex: 3,
-                      child: subpageItems[0], // TODO: Add getting from state
+                    BlocBuilder<CoreCubit, CoreState>(
+                      bloc: cubitCore,
+                      builder: (context, state) {
+                        return Expanded(
+                          flex: 3,
+                          child: subpageItems[state.selectedSubpage],
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -80,7 +95,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('bbb'),
+            Text('ccc'),
           ],
         ),
       ),
