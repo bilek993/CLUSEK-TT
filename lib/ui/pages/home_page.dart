@@ -3,6 +3,7 @@ import 'package:clusek_tt/ui/other/shadow_decoration.dart';
 import 'package:clusek_tt/ui/widgets/core_bottom_navigation_bar.dart';
 import 'package:clusek_tt/ui/widgets/image_preview.dart';
 import 'package:clusek_tt/ui/widgets/submenu_list_item.dart';
+import 'package:clusek_tt/ui/widgets/subpage_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,6 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var subpageItems = _getSubpageItems();
     return Scaffold(
       body: Row(
         children: [
@@ -18,17 +20,17 @@ class HomePage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
-                padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
+                padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
                 decoration: ShadowDecoration(),
                 child: Row(
                   children: [
                     Expanded(
                       flex: 1,
                       child: ListView.builder(
-                        itemCount: 2,
+                        itemCount: subpageItems.length,
                         itemBuilder: (context, index) => SubmenuListItem(
-                          textValue: 'XYZ',
-                          fillBackground: index == 0,
+                          textValue: subpageItems[index].title,
+                          fillBackground: index == 0, // TODO: Change this!
                         ),
                       ),
                     ),
@@ -38,11 +40,7 @@ class HomePage extends StatelessWidget {
                     ),
                     Expanded(
                       flex: 3,
-                      child: Column(
-                        children: const [
-                          Text('bbb'),
-                        ],
-                      ),
+                      child: subpageItems[0], // TODO: Add getting from state
                     ),
                   ],
                 ),
@@ -64,5 +62,17 @@ class HomePage extends StatelessWidget {
         onConvertButtonPressed: () {},
       ),
     );
+  }
+
+  List<SubpageItem> _getSubpageItems() {
+    return [
+      SubpageItem(
+          title: 'I/O',
+          child: Column(
+            children: const [
+              Text('bbb'),
+            ],
+          ))
+    ];
   }
 }
