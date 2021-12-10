@@ -12,33 +12,35 @@ class FilesSubpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SettingsItemWithTitle(
-          description: AppLocalizations.of(context)!.inputFilePath,
-          controlWidget: const TextField(),
-          actionButton: ElevatedButton(
-            child: Text(AppLocalizations.of(context)!.selectAction),
-            onPressed: () => _openFileSelectorAction(context),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SettingsItemWithTitle(
+            description: AppLocalizations.of(context)!.inputFilePath,
+            controlWidget: const TextField(),
+            actionButton: ElevatedButton(
+              child: Text(AppLocalizations.of(context)!.selectAction),
+              onPressed: () => _openFileSelectorAction(context),
+            ),
           ),
-        ),
-        SettingsItemWithTitle(
-          description: AppLocalizations.of(context)!.outputFilePath,
-          controlWidget: const TextField(),
-          actionButton: ElevatedButton(
-            child: Text(AppLocalizations.of(context)!.selectAction),
-            onPressed: () => _saveFileSelectorAction(context),
+          SettingsItemWithTitle(
+            description: AppLocalizations.of(context)!.outputFilePath,
+            controlWidget: const TextField(),
+            actionButton: ElevatedButton(
+              child: Text(AppLocalizations.of(context)!.selectAction),
+              onPressed: () => _saveFileSelectorAction(context),
+            ),
           ),
-        ),
-        SettingsItemWithTitle(
-          description: AppLocalizations.of(context)!.autoOutputPath,
-          controlWidget: Checkbox(
-            value: true,
-            onChanged: (value) {},
+          SettingsItemWithTitle(
+            description: AppLocalizations.of(context)!.autoOutputPath,
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
