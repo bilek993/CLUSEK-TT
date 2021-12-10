@@ -97,7 +97,7 @@ class HomePage extends StatelessWidget {
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.inputSubpageTitle,
-          child: const InputSubpage(),
+          child: InputSubpage(),
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.mipmapsSubpageTitle,
