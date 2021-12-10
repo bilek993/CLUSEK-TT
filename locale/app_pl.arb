@@ -10,5 +10,10 @@
     "outputSubpageTitle": "Dane wyjściowe",
     "inputFilePath": "Plik wejściowy:",
     "outputFilePath": "Plik wyjściowy",
-    "autoOutputPath": "Automatyczna ścieżka wyjściowa:"
+    "autoOutputPath": "Automatyczna ścieżka wyjściowa:",
+    "selectAction": "Wybierz",
+    "selectInputImageDialogTitle": "Wybierz kompatybilny plik wejściowy...",
+    "supportedInputImageFiles": "Pliki tekstur (*.bmp;*.png;*.tiff;*.jpg;*.jpeg)",
+    "selectOutputImageDialogTitle": "Wybierz nazwę i lokalizację pliku wynikowego...",
+    "supportedOutputImageFiles": "DirectDraw Surface (*.dds)"
 }

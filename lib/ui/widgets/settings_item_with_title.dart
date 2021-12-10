@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class SettingsItemWithTitle extends StatelessWidget {
   final String description;
   final Widget controlWidget;
+  final ButtonStyleButton? actionButton;
 
   const SettingsItemWithTitle({
     Key? key,
     required this.description,
     required this.controlWidget,
+    this.actionButton,
   }) : super(key: key);
 
   @override
@@ -28,6 +30,12 @@ class SettingsItemWithTitle extends StatelessWidget {
             flex: 2,
             child: controlWidget,
           ),
+          actionButton == null
+              ? Container()
+              : Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: actionButton!,
+                ),
         ],
       ),
     );

@@ -10,5 +10,10 @@
     "outputSubpageTitle": "Output",
     "inputFilePath": "Input file:",
     "outputFilePath": "Output file:",
-    "autoOutputPath": "Auto output path:"
+    "autoOutputPath": "Auto output path:",
+    "selectAction": "Select",
+    "selectInputImageDialogTitle": "Select compatible input image file...",
+    "supportedInputImageFiles": "Texture file (*.bmp;*.png;*.tiff;*.jpg;*.jpeg)",
+    "selectOutputImageDialogTitle": "Select location for the output file...",
+    "supportedOutputImageFiles": "DirectDraw Surface (*.dds)"
 }

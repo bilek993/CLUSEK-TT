@@ -22,6 +22,7 @@ dependencies:
   logger: 1.1.0
   intl: 0.17.0
   freezed_annotation: 1.0.0
+  filepicker_windows: 2.0.1
 
 dev_dependencies:
   flutter_test:
