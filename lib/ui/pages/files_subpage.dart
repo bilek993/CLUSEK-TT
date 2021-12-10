@@ -63,7 +63,7 @@ class FilesSubpage extends StatelessWidget {
 
   void _saveFileSelectorAction(BuildContext context) {
     final file = SaveFilePicker()
-      ..title = 'xyz'
+      ..title = AppLocalizations.of(context)!.selectOutputImageDialogTitle
       ..filterSpecification = {
         AppLocalizations.of(context)!.supportedOutputImageFiles: '*.dds',
       };
