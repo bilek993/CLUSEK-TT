@@ -42,6 +42,49 @@ class ClusekTTApp extends StatelessWidget {
               side: const BorderSide(width: 2.0, color: AppColors.white),
             ),
           ),
+          textSelectionTheme: const TextSelectionThemeData(
+            cursorColor: AppColors.white,
+          ),
+          inputDecorationTheme: const InputDecorationTheme(
+            isDense: true,
+            contentPadding: EdgeInsets.all(8.0),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.white,
+                width: 1.0,
+              ),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.separatorColor,
+                width: 1.0,
+              ),
+            ),
+            disabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.separatorColor,
+                width: 1.0,
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.errorColor,
+                width: 1.0,
+              ),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: AppColors.errorColorLight,
+                width: 1.0,
+              ),
+            ),
+          ),
+          checkboxTheme: Theme.of(context).checkboxTheme.copyWith(
+                side: const BorderSide(
+                    color: AppColors.separatorColor, width: 1.0),
+                checkColor: MaterialStateProperty.all(AppColors.separatorColor),
+                fillColor: MaterialStateProperty.all(AppColors.white),
+              ),
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: AppColors.textColor,
                 displayColor: AppColors.textColor,
