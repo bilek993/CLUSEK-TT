@@ -7,5 +7,8 @@
     "inputSubpageTitle": "Input",
     "mipmapsSubpageTitle": "MipMaps",
     "compressionSubpageTitle": "Compression",
-    "outputSubpageTitle": "Output"
+    "outputSubpageTitle": "Output",
+    "inputFilePath": "Input file:",
+    "outputFilePath": "Output file:",
+    "autoOutputPath": "Auto output path:"
 }
