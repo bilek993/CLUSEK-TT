@@ -28,6 +28,7 @@ class ClusekTTApp extends StatelessWidget {
           iconTheme: Theme.of(context).iconTheme.copyWith(
                 color: AppColors.iconsColor,
               ),
+          canvasColor: AppColors.separatorColor,
           buttonTheme: Theme.of(context).buttonTheme.copyWith(
                 buttonColor: AppColors.white,
               ),
