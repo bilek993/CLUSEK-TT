@@ -28,14 +28,18 @@ class SettingsItemWithTitle extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: controlWidget,
+            child: Row(
+              children: [
+                Expanded(child: controlWidget),
+                actionButton == null
+                    ? Container()
+                    : Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: actionButton!,
+                      ),
+              ],
+            ),
           ),
-          actionButton == null
-              ? Container()
-              : Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: actionButton!,
-                ),
         ],
       ),
     );
