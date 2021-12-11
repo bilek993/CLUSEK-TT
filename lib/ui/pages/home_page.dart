@@ -110,7 +110,7 @@ class HomePage extends StatelessWidget {
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.outputSubpageTitle,
-          child: const OutputSubpage(),
+          child: OutputSubpage(),
         ),
       ];
 }
