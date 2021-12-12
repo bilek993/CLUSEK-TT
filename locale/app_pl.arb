@@ -15,5 +15,7 @@
     "selectInputImageDialogTitle": "Wybierz kompatybilny plik wejściowy...",
     "supportedInputImageFiles": "Pliki tekstur (*.bmp;*.png;*.tiff;*.jpg;*.jpeg)",
     "selectOutputImageDialogTitle": "Wybierz nazwę i lokalizację pliku wynikowego...",
-    "supportedOutputImageFiles": "DirectDraw Surface (*.dds)"
+    "supportedOutputImageFiles": "DirectDraw Surface (*.dds)",
+    "selectedCompressionAlgorithm": "Wybrany algorytm:",
+    "threshold": "Wartość progowa:"
 }

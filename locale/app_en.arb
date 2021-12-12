@@ -15,5 +15,7 @@
     "selectInputImageDialogTitle": "Select compatible input image file...",
     "supportedInputImageFiles": "Texture file (*.bmp;*.png;*.tiff;*.jpg;*.jpeg)",
     "selectOutputImageDialogTitle": "Select location for the output file...",
-    "supportedOutputImageFiles": "DirectDraw Surface (*.dds)"
+    "supportedOutputImageFiles": "DirectDraw Surface (*.dds)",
+    "selectedCompressionAlgorithm": "Selected algorithm:",
+    "threshold": "Threshold"
 }
