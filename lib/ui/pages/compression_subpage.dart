@@ -61,13 +61,6 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
             controlWidget: const TextField(),
           ),
           SettingsItemWithTitle(
-            description: 'TEX_COMPRESS_DEFAULT',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
             description: 'TEX_COMPRESS_RGB_DITHER',
             controlWidget: Checkbox(
               value: true,

@@ -25,13 +25,6 @@ class _InputSubpageState extends State<InputSubpage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SettingsItemWithTitle(
-            description: 'WIC_FLAGS_NONE',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
             description: 'WIC_FLAGS_FORCE_RGB',
             controlWidget: Checkbox(
               value: true,

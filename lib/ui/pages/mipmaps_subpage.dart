@@ -25,13 +25,6 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SettingsItemWithTitle(
-            description: 'TEX_FILTER_DEFAULT',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
             description: 'TEX_FILTER_POINT',
             controlWidget: Checkbox(
               value: true,

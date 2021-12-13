@@ -25,13 +25,6 @@ class _OutputSubpageState extends State<OutputSubpage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SettingsItemWithTitle(
-            description: 'DDS_FLAGS_NONE',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
             description: 'DDS_FLAGS_LEGACY_DWORD',
             controlWidget: Checkbox(
               value: true,
