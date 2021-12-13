@@ -21,4 +21,16 @@ class CoreCubit extends Cubit<CoreState> {
 
     emit(state.copyWith(selectedSubpage: page));
   }
+
+  void setInputFilePath(String value) {
+    emit(state.copyWith(inputFilePath: value));
+  }
+
+  void setOutputFilePath(String value) {
+    emit(state.copyWith(outputFilePath: value));
+  }
+
+  void setAutomaticOutputFilePath(bool value) {
+    emit(state.copyWith(automaticOutputFilePath: value));
+  }
 }

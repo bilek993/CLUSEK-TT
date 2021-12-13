@@ -1,7 +1,9 @@
+import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
 import 'package:clusek_tt/services/locator.dart';
 import 'package:clusek_tt/ui/widgets/settings_item_with_title.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
 
@@ -13,8 +15,20 @@ class FilesSubpage extends StatefulWidget {
 }
 
 class _FilesSubpageState extends State<FilesSubpage> {
+  CoreCubit? cubit;
+
   final Logger _log = locator.get();
   final ScrollController _scrollController = ScrollController();
+  final TextEditingController _inputTextEditingController =
+      TextEditingController();
+  final TextEditingController _outputTextEditingController =
+      TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    cubit = BlocProvider.of<CoreCubit>(context);
+  }
 
   @override
   void dispose() {
@@ -31,7 +45,10 @@ class _FilesSubpageState extends State<FilesSubpage> {
         children: [
           SettingsItemWithTitle(
             description: AppLocalizations.of(context)!.inputFilePath,
-            controlWidget: const TextField(),
+            controlWidget: TextFormField(
+              controller: _inputTextEditingController,
+              onChanged: (value) => cubit?.setInputFilePath(value),
+            ),
             actionButton: ElevatedButton(
               child: Text(AppLocalizations.of(context)!.selectAction),
               onPressed: () => _openFileSelectorAction(context),
@@ -39,18 +56,26 @@ class _FilesSubpageState extends State<FilesSubpage> {
           ),
           SettingsItemWithTitle(
             description: AppLocalizations.of(context)!.outputFilePath,
-            controlWidget: const TextField(),
+            controlWidget: TextFormField(
+              controller: _outputTextEditingController,
+              onChanged: (value) => cubit?.setOutputFilePath(value),
+            ),
             actionButton: ElevatedButton(
               child: Text(AppLocalizations.of(context)!.selectAction),
               onPressed: () => _saveFileSelectorAction(context),
             ),
           ),
-          SettingsItemWithTitle(
-            description: AppLocalizations.of(context)!.autoOutputPath,
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
+          BlocBuilder<CoreCubit, CoreState>(
+            builder: (context, state) {
+              return SettingsItemWithTitle(
+                description: AppLocalizations.of(context)!.autoOutputPath,
+                controlWidget: Checkbox(
+                  value: state.automaticOutputFilePath,
+                  onChanged: (value) =>
+                      cubit?.setAutomaticOutputFilePath(value ?? false),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -71,6 +96,8 @@ class _FilesSubpageState extends State<FilesSubpage> {
       _log.w('No file selected...');
     } else {
       _log.i("File '${result.path}' has been selected...");
+      _inputTextEditingController.text = result.path;
+      cubit?.setInputFilePath(result.path);
     }
   }
 
@@ -85,7 +112,13 @@ class _FilesSubpageState extends State<FilesSubpage> {
     if (result == null) {
       _log.w('No file selected...');
     } else {
-      _log.i("Location '${result.path}' for a new file has been selected...");
+      String path = result.path.trim().toLowerCase().endsWith('.dds')
+          ? result.path
+          : result.path + '.dds';
+
+      _log.i("Location '$path' for a new file has been selected...");
+      _outputTextEditingController.text = path;
+      cubit?.setOutputFilePath(path);
     }
   }
 }

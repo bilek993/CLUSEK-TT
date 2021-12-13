@@ -17,9 +17,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CoreStateTearOff {
   const _$CoreStateTearOff();
 
-  _Initial initial({int selectedSubpage = 0}) {
+  _Initial initial(
+      {int selectedSubpage = 0,
+      String inputFilePath = '',
+      String outputFilePath = '',
+      bool automaticOutputFilePath = false}) {
     return _Initial(
       selectedSubpage: selectedSubpage,
+      inputFilePath: inputFilePath,
+      outputFilePath: outputFilePath,
+      automaticOutputFilePath: automaticOutputFilePath,
     );
   }
 }
@@ -30,20 +37,29 @@ const $CoreState = _$CoreStateTearOff();
 /// @nodoc
 mixin _$CoreState {
   int get selectedSubpage => throw _privateConstructorUsedError;
+  String get inputFilePath => throw _privateConstructorUsedError;
+  String get outputFilePath => throw _privateConstructorUsedError;
+  bool get automaticOutputFilePath => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int selectedSubpage) initial,
+    required TResult Function(int selectedSubpage, String inputFilePath,
+            String outputFilePath, bool automaticOutputFilePath)
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int selectedSubpage)? initial,
+    TResult Function(int selectedSubpage, String inputFilePath,
+            String outputFilePath, bool automaticOutputFilePath)?
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int selectedSubpage)? initial,
+    TResult Function(int selectedSubpage, String inputFilePath,
+            String outputFilePath, bool automaticOutputFilePath)?
+        initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,7 +89,11 @@ mixin _$CoreState {
 abstract class $CoreStateCopyWith<$Res> {
   factory $CoreStateCopyWith(CoreState value, $Res Function(CoreState) then) =
       _$CoreStateCopyWithImpl<$Res>;
-  $Res call({int selectedSubpage});
+  $Res call(
+      {int selectedSubpage,
+      String inputFilePath,
+      String outputFilePath,
+      bool automaticOutputFilePath});
 }
 
 /// @nodoc
@@ -87,12 +107,27 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
   @override
   $Res call({
     Object? selectedSubpage = freezed,
+    Object? inputFilePath = freezed,
+    Object? outputFilePath = freezed,
+    Object? automaticOutputFilePath = freezed,
   }) {
     return _then(_value.copyWith(
       selectedSubpage: selectedSubpage == freezed
           ? _value.selectedSubpage
           : selectedSubpage // ignore: cast_nullable_to_non_nullable
               as int,
+      inputFilePath: inputFilePath == freezed
+          ? _value.inputFilePath
+          : inputFilePath // ignore: cast_nullable_to_non_nullable
+              as String,
+      outputFilePath: outputFilePath == freezed
+          ? _value.outputFilePath
+          : outputFilePath // ignore: cast_nullable_to_non_nullable
+              as String,
+      automaticOutputFilePath: automaticOutputFilePath == freezed
+          ? _value.automaticOutputFilePath
+          : automaticOutputFilePath // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -102,7 +137,11 @@ abstract class _$InitialCopyWith<$Res> implements $CoreStateCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
   @override
-  $Res call({int selectedSubpage});
+  $Res call(
+      {int selectedSubpage,
+      String inputFilePath,
+      String outputFilePath,
+      bool automaticOutputFilePath});
 }
 
 /// @nodoc
@@ -117,12 +156,27 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedSubpage = freezed,
+    Object? inputFilePath = freezed,
+    Object? outputFilePath = freezed,
+    Object? automaticOutputFilePath = freezed,
   }) {
     return _then(_Initial(
       selectedSubpage: selectedSubpage == freezed
           ? _value.selectedSubpage
           : selectedSubpage // ignore: cast_nullable_to_non_nullable
               as int,
+      inputFilePath: inputFilePath == freezed
+          ? _value.inputFilePath
+          : inputFilePath // ignore: cast_nullable_to_non_nullable
+              as String,
+      outputFilePath: outputFilePath == freezed
+          ? _value.outputFilePath
+          : outputFilePath // ignore: cast_nullable_to_non_nullable
+              as String,
+      automaticOutputFilePath: automaticOutputFilePath == freezed
+          ? _value.automaticOutputFilePath
+          : automaticOutputFilePath // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -130,15 +184,28 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial implements _Initial {
-  const _$_Initial({this.selectedSubpage = 0});
+  const _$_Initial(
+      {this.selectedSubpage = 0,
+      this.inputFilePath = '',
+      this.outputFilePath = '',
+      this.automaticOutputFilePath = false});
 
   @JsonKey(defaultValue: 0)
   @override
   final int selectedSubpage;
+  @JsonKey(defaultValue: '')
+  @override
+  final String inputFilePath;
+  @JsonKey(defaultValue: '')
+  @override
+  final String outputFilePath;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool automaticOutputFilePath;
 
   @override
   String toString() {
-    return 'CoreState.initial(selectedSubpage: $selectedSubpage)';
+    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath)';
   }
 
   @override
@@ -147,12 +214,22 @@ class _$_Initial implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _Initial &&
             const DeepCollectionEquality()
-                .equals(other.selectedSubpage, selectedSubpage));
+                .equals(other.selectedSubpage, selectedSubpage) &&
+            const DeepCollectionEquality()
+                .equals(other.inputFilePath, inputFilePath) &&
+            const DeepCollectionEquality()
+                .equals(other.outputFilePath, outputFilePath) &&
+            const DeepCollectionEquality().equals(
+                other.automaticOutputFilePath, automaticOutputFilePath));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(selectedSubpage));
+      runtimeType,
+      const DeepCollectionEquality().hash(selectedSubpage),
+      const DeepCollectionEquality().hash(inputFilePath),
+      const DeepCollectionEquality().hash(outputFilePath),
+      const DeepCollectionEquality().hash(automaticOutputFilePath));
 
   @JsonKey(ignore: true)
   @override
@@ -162,27 +239,36 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int selectedSubpage) initial,
+    required TResult Function(int selectedSubpage, String inputFilePath,
+            String outputFilePath, bool automaticOutputFilePath)
+        initial,
   }) {
-    return initial(selectedSubpage);
+    return initial(selectedSubpage, inputFilePath, outputFilePath,
+        automaticOutputFilePath);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int selectedSubpage)? initial,
+    TResult Function(int selectedSubpage, String inputFilePath,
+            String outputFilePath, bool automaticOutputFilePath)?
+        initial,
   }) {
-    return initial?.call(selectedSubpage);
+    return initial?.call(selectedSubpage, inputFilePath, outputFilePath,
+        automaticOutputFilePath);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int selectedSubpage)? initial,
+    TResult Function(int selectedSubpage, String inputFilePath,
+            String outputFilePath, bool automaticOutputFilePath)?
+        initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(selectedSubpage);
+      return initial(selectedSubpage, inputFilePath, outputFilePath,
+          automaticOutputFilePath);
     }
     return orElse();
   }
@@ -217,10 +303,20 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements CoreState {
-  const factory _Initial({int selectedSubpage}) = _$_Initial;
+  const factory _Initial(
+      {int selectedSubpage,
+      String inputFilePath,
+      String outputFilePath,
+      bool automaticOutputFilePath}) = _$_Initial;
 
   @override
   int get selectedSubpage;
+  @override
+  String get inputFilePath;
+  @override
+  String get outputFilePath;
+  @override
+  bool get automaticOutputFilePath;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>

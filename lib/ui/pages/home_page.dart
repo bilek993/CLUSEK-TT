@@ -94,15 +94,15 @@ class HomePage extends StatelessWidget {
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.filesSubpageTitle,
-          child: FilesSubpage(),
+          child: const FilesSubpage(),
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.inputSubpageTitle,
-          child: InputSubpage(),
+          child: const InputSubpage(),
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.mipmapsSubpageTitle,
-          child: MipmapsSubpage(),
+          child: const MipmapsSubpage(),
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.compressionSubpageTitle,
@@ -110,7 +110,7 @@ class HomePage extends StatelessWidget {
         ),
         SubpageItem(
           title: AppLocalizations.of(context)!.outputSubpageTitle,
-          child: OutputSubpage(),
+          child: const OutputSubpage(),
         ),
       ];
 }
