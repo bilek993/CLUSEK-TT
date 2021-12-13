@@ -95,9 +95,11 @@ class _FilesSubpageState extends State<FilesSubpage> {
     if (result == null) {
       _log.w('No file selected...');
     } else {
-      _log.i("File '${result.path}' has been selected...");
-      _inputTextEditingController.text = result.path;
-      cubit?.setInputFilePath(result.path);
+      String path = result.path;
+
+      _log.i("File '$path' has been selected...");
+      _inputTextEditingController.text = path;
+      cubit?.setInputFilePath(path);
     }
   }
 
