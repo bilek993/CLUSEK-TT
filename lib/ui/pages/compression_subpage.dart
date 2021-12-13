@@ -3,12 +3,26 @@ import 'package:clusek_tt/ui/widgets/settings_item_with_title.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class CompressionSubpage extends StatelessWidget {
+class CompressionSubpage extends StatefulWidget {
   const CompressionSubpage({Key? key}) : super(key: key);
+
+  @override
+  State<CompressionSubpage> createState() => _CompressionSubpageState();
+}
+
+class _CompressionSubpageState extends State<CompressionSubpage> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _scrollController,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

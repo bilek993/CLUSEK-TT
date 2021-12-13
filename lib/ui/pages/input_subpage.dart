@@ -1,10 +1,21 @@
 import 'package:clusek_tt/ui/widgets/settings_item_with_title.dart';
 import 'package:flutter/material.dart';
 
-class InputSubpage extends StatelessWidget {
+class InputSubpage extends StatefulWidget {
+  const InputSubpage({Key? key}) : super(key: key);
+
+  @override
+  State<InputSubpage> createState() => _InputSubpageState();
+}
+
+class _InputSubpageState extends State<InputSubpage> {
   final ScrollController _scrollController = ScrollController();
 
-  InputSubpage({Key? key}) : super(key: key);
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

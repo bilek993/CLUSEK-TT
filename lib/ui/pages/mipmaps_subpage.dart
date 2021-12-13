@@ -1,10 +1,21 @@
 import 'package:clusek_tt/ui/widgets/settings_item_with_title.dart';
 import 'package:flutter/material.dart';
 
-class MipmapsSubpage extends StatelessWidget {
+class MipmapsSubpage extends StatefulWidget {
+  const MipmapsSubpage({Key? key}) : super(key: key);
+
+  @override
+  State<MipmapsSubpage> createState() => _MipmapsSubpageState();
+}
+
+class _MipmapsSubpageState extends State<MipmapsSubpage> {
   final ScrollController _scrollController = ScrollController();
 
-  MipmapsSubpage({Key? key}) : super(key: key);
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

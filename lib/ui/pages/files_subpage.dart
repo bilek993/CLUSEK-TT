@@ -5,14 +5,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:logger/logger.dart';
 
-class FilesSubpage extends StatelessWidget {
-  final Logger _log = locator.get();
+class FilesSubpage extends StatefulWidget {
+  const FilesSubpage({Key? key}) : super(key: key);
 
-  FilesSubpage({Key? key}) : super(key: key);
+  @override
+  State<FilesSubpage> createState() => _FilesSubpageState();
+}
+
+class _FilesSubpageState extends State<FilesSubpage> {
+  final Logger _log = locator.get();
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _scrollController,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
