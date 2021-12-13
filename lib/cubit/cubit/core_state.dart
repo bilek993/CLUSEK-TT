@@ -7,5 +7,9 @@ class CoreState with _$CoreState {
     @Default('') String inputFilePath,
     @Default('') String outputFilePath,
     @Default(false) bool automaticOutputFilePath,
+    @Default(0x0) int wicFlagsMask,
+    @Default(0x0) int texFilterMask,
+    @Default(0x0) int texCompressMask,
+    @Default(0x0) int ddsFlagsMask,
   }) = _Initial;
 }

@@ -21,12 +21,20 @@ class _$CoreStateTearOff {
       {int selectedSubpage = 0,
       String inputFilePath = '',
       String outputFilePath = '',
-      bool automaticOutputFilePath = false}) {
+      bool automaticOutputFilePath = false,
+      int wicFlagsMask = 0x0,
+      int texFilterMask = 0x0,
+      int texCompressMask = 0x0,
+      int ddsFlagsMask = 0x0}) {
     return _Initial(
       selectedSubpage: selectedSubpage,
       inputFilePath: inputFilePath,
       outputFilePath: outputFilePath,
       automaticOutputFilePath: automaticOutputFilePath,
+      wicFlagsMask: wicFlagsMask,
+      texFilterMask: texFilterMask,
+      texCompressMask: texCompressMask,
+      ddsFlagsMask: ddsFlagsMask,
     );
   }
 }
@@ -40,25 +48,50 @@ mixin _$CoreState {
   String get inputFilePath => throw _privateConstructorUsedError;
   String get outputFilePath => throw _privateConstructorUsedError;
   bool get automaticOutputFilePath => throw _privateConstructorUsedError;
+  int get wicFlagsMask => throw _privateConstructorUsedError;
+  int get texFilterMask => throw _privateConstructorUsedError;
+  int get texCompressMask => throw _privateConstructorUsedError;
+  int get ddsFlagsMask => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int selectedSubpage, String inputFilePath,
-            String outputFilePath, bool automaticOutputFilePath)
+    required TResult Function(
+            int selectedSubpage,
+            String inputFilePath,
+            String outputFilePath,
+            bool automaticOutputFilePath,
+            int wicFlagsMask,
+            int texFilterMask,
+            int texCompressMask,
+            int ddsFlagsMask)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int selectedSubpage, String inputFilePath,
-            String outputFilePath, bool automaticOutputFilePath)?
+    TResult Function(
+            int selectedSubpage,
+            String inputFilePath,
+            String outputFilePath,
+            bool automaticOutputFilePath,
+            int wicFlagsMask,
+            int texFilterMask,
+            int texCompressMask,
+            int ddsFlagsMask)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int selectedSubpage, String inputFilePath,
-            String outputFilePath, bool automaticOutputFilePath)?
+    TResult Function(
+            int selectedSubpage,
+            String inputFilePath,
+            String outputFilePath,
+            bool automaticOutputFilePath,
+            int wicFlagsMask,
+            int texFilterMask,
+            int texCompressMask,
+            int ddsFlagsMask)?
         initial,
     required TResult orElse(),
   }) =>
@@ -93,7 +126,11 @@ abstract class $CoreStateCopyWith<$Res> {
       {int selectedSubpage,
       String inputFilePath,
       String outputFilePath,
-      bool automaticOutputFilePath});
+      bool automaticOutputFilePath,
+      int wicFlagsMask,
+      int texFilterMask,
+      int texCompressMask,
+      int ddsFlagsMask});
 }
 
 /// @nodoc
@@ -110,6 +147,10 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
     Object? inputFilePath = freezed,
     Object? outputFilePath = freezed,
     Object? automaticOutputFilePath = freezed,
+    Object? wicFlagsMask = freezed,
+    Object? texFilterMask = freezed,
+    Object? texCompressMask = freezed,
+    Object? ddsFlagsMask = freezed,
   }) {
     return _then(_value.copyWith(
       selectedSubpage: selectedSubpage == freezed
@@ -128,6 +169,22 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
           ? _value.automaticOutputFilePath
           : automaticOutputFilePath // ignore: cast_nullable_to_non_nullable
               as bool,
+      wicFlagsMask: wicFlagsMask == freezed
+          ? _value.wicFlagsMask
+          : wicFlagsMask // ignore: cast_nullable_to_non_nullable
+              as int,
+      texFilterMask: texFilterMask == freezed
+          ? _value.texFilterMask
+          : texFilterMask // ignore: cast_nullable_to_non_nullable
+              as int,
+      texCompressMask: texCompressMask == freezed
+          ? _value.texCompressMask
+          : texCompressMask // ignore: cast_nullable_to_non_nullable
+              as int,
+      ddsFlagsMask: ddsFlagsMask == freezed
+          ? _value.ddsFlagsMask
+          : ddsFlagsMask // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -141,7 +198,11 @@ abstract class _$InitialCopyWith<$Res> implements $CoreStateCopyWith<$Res> {
       {int selectedSubpage,
       String inputFilePath,
       String outputFilePath,
-      bool automaticOutputFilePath});
+      bool automaticOutputFilePath,
+      int wicFlagsMask,
+      int texFilterMask,
+      int texCompressMask,
+      int ddsFlagsMask});
 }
 
 /// @nodoc
@@ -159,6 +220,10 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
     Object? inputFilePath = freezed,
     Object? outputFilePath = freezed,
     Object? automaticOutputFilePath = freezed,
+    Object? wicFlagsMask = freezed,
+    Object? texFilterMask = freezed,
+    Object? texCompressMask = freezed,
+    Object? ddsFlagsMask = freezed,
   }) {
     return _then(_Initial(
       selectedSubpage: selectedSubpage == freezed
@@ -177,6 +242,22 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
           ? _value.automaticOutputFilePath
           : automaticOutputFilePath // ignore: cast_nullable_to_non_nullable
               as bool,
+      wicFlagsMask: wicFlagsMask == freezed
+          ? _value.wicFlagsMask
+          : wicFlagsMask // ignore: cast_nullable_to_non_nullable
+              as int,
+      texFilterMask: texFilterMask == freezed
+          ? _value.texFilterMask
+          : texFilterMask // ignore: cast_nullable_to_non_nullable
+              as int,
+      texCompressMask: texCompressMask == freezed
+          ? _value.texCompressMask
+          : texCompressMask // ignore: cast_nullable_to_non_nullable
+              as int,
+      ddsFlagsMask: ddsFlagsMask == freezed
+          ? _value.ddsFlagsMask
+          : ddsFlagsMask // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -188,7 +269,11 @@ class _$_Initial implements _Initial {
       {this.selectedSubpage = 0,
       this.inputFilePath = '',
       this.outputFilePath = '',
-      this.automaticOutputFilePath = false});
+      this.automaticOutputFilePath = false,
+      this.wicFlagsMask = 0x0,
+      this.texFilterMask = 0x0,
+      this.texCompressMask = 0x0,
+      this.ddsFlagsMask = 0x0});
 
   @JsonKey(defaultValue: 0)
   @override
@@ -202,10 +287,22 @@ class _$_Initial implements _Initial {
   @JsonKey(defaultValue: false)
   @override
   final bool automaticOutputFilePath;
+  @JsonKey(defaultValue: 0x0)
+  @override
+  final int wicFlagsMask;
+  @JsonKey(defaultValue: 0x0)
+  @override
+  final int texFilterMask;
+  @JsonKey(defaultValue: 0x0)
+  @override
+  final int texCompressMask;
+  @JsonKey(defaultValue: 0x0)
+  @override
+  final int ddsFlagsMask;
 
   @override
   String toString() {
-    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath)';
+    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath, wicFlagsMask: $wicFlagsMask, texFilterMask: $texFilterMask, texCompressMask: $texCompressMask, ddsFlagsMask: $ddsFlagsMask)';
   }
 
   @override
@@ -220,7 +317,15 @@ class _$_Initial implements _Initial {
             const DeepCollectionEquality()
                 .equals(other.outputFilePath, outputFilePath) &&
             const DeepCollectionEquality().equals(
-                other.automaticOutputFilePath, automaticOutputFilePath));
+                other.automaticOutputFilePath, automaticOutputFilePath) &&
+            const DeepCollectionEquality()
+                .equals(other.wicFlagsMask, wicFlagsMask) &&
+            const DeepCollectionEquality()
+                .equals(other.texFilterMask, texFilterMask) &&
+            const DeepCollectionEquality()
+                .equals(other.texCompressMask, texCompressMask) &&
+            const DeepCollectionEquality()
+                .equals(other.ddsFlagsMask, ddsFlagsMask));
   }
 
   @override
@@ -229,7 +334,11 @@ class _$_Initial implements _Initial {
       const DeepCollectionEquality().hash(selectedSubpage),
       const DeepCollectionEquality().hash(inputFilePath),
       const DeepCollectionEquality().hash(outputFilePath),
-      const DeepCollectionEquality().hash(automaticOutputFilePath));
+      const DeepCollectionEquality().hash(automaticOutputFilePath),
+      const DeepCollectionEquality().hash(wicFlagsMask),
+      const DeepCollectionEquality().hash(texFilterMask),
+      const DeepCollectionEquality().hash(texCompressMask),
+      const DeepCollectionEquality().hash(ddsFlagsMask));
 
   @JsonKey(ignore: true)
   @override
@@ -239,36 +348,78 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int selectedSubpage, String inputFilePath,
-            String outputFilePath, bool automaticOutputFilePath)
+    required TResult Function(
+            int selectedSubpage,
+            String inputFilePath,
+            String outputFilePath,
+            bool automaticOutputFilePath,
+            int wicFlagsMask,
+            int texFilterMask,
+            int texCompressMask,
+            int ddsFlagsMask)
         initial,
   }) {
-    return initial(selectedSubpage, inputFilePath, outputFilePath,
-        automaticOutputFilePath);
+    return initial(
+        selectedSubpage,
+        inputFilePath,
+        outputFilePath,
+        automaticOutputFilePath,
+        wicFlagsMask,
+        texFilterMask,
+        texCompressMask,
+        ddsFlagsMask);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int selectedSubpage, String inputFilePath,
-            String outputFilePath, bool automaticOutputFilePath)?
+    TResult Function(
+            int selectedSubpage,
+            String inputFilePath,
+            String outputFilePath,
+            bool automaticOutputFilePath,
+            int wicFlagsMask,
+            int texFilterMask,
+            int texCompressMask,
+            int ddsFlagsMask)?
         initial,
   }) {
-    return initial?.call(selectedSubpage, inputFilePath, outputFilePath,
-        automaticOutputFilePath);
+    return initial?.call(
+        selectedSubpage,
+        inputFilePath,
+        outputFilePath,
+        automaticOutputFilePath,
+        wicFlagsMask,
+        texFilterMask,
+        texCompressMask,
+        ddsFlagsMask);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int selectedSubpage, String inputFilePath,
-            String outputFilePath, bool automaticOutputFilePath)?
+    TResult Function(
+            int selectedSubpage,
+            String inputFilePath,
+            String outputFilePath,
+            bool automaticOutputFilePath,
+            int wicFlagsMask,
+            int texFilterMask,
+            int texCompressMask,
+            int ddsFlagsMask)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(selectedSubpage, inputFilePath, outputFilePath,
-          automaticOutputFilePath);
+      return initial(
+          selectedSubpage,
+          inputFilePath,
+          outputFilePath,
+          automaticOutputFilePath,
+          wicFlagsMask,
+          texFilterMask,
+          texCompressMask,
+          ddsFlagsMask);
     }
     return orElse();
   }
@@ -307,7 +458,11 @@ abstract class _Initial implements CoreState {
       {int selectedSubpage,
       String inputFilePath,
       String outputFilePath,
-      bool automaticOutputFilePath}) = _$_Initial;
+      bool automaticOutputFilePath,
+      int wicFlagsMask,
+      int texFilterMask,
+      int texCompressMask,
+      int ddsFlagsMask}) = _$_Initial;
 
   @override
   int get selectedSubpage;
@@ -317,6 +472,14 @@ abstract class _Initial implements CoreState {
   String get outputFilePath;
   @override
   bool get automaticOutputFilePath;
+  @override
+  int get wicFlagsMask;
+  @override
+  int get texFilterMask;
+  @override
+  int get texCompressMask;
+  @override
+  int get ddsFlagsMask;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>
