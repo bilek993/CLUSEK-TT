@@ -33,4 +33,20 @@ class CoreCubit extends Cubit<CoreState> {
   void setAutomaticOutputFilePath(bool value) {
     emit(state.copyWith(automaticOutputFilePath: value));
   }
+
+  void setWicFlagsMask(int mask) {
+    emit(state.copyWith(wicFlagsMask: mask));
+  }
+
+  void setTexFilterMask(int mask) {
+    emit(state.copyWith(texFilterMask: mask));
+  }
+
+  void setTexCompressMask(int mask) {
+    emit(state.copyWith(texCompressMask: mask));
+  }
+
+  void setDdsFlagsMask(int mask) {
+    emit(state.copyWith(ddsFlagsMask: mask));
+  }
 }
