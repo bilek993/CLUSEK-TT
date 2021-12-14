@@ -1,6 +1,6 @@
 extension IntegerBitwiseOperationsExtensions on int {
   bool checkFlag(int flag) {
-    return this & flag > 0;
+    return this & flag == flag;
   }
 
   int addFlag(int flag) {
