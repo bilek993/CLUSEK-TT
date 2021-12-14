@@ -25,62 +25,6 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SettingsItemWithTitle(
-            description: 'TEX_FILTER_POINT',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_FILTER_LINEAR',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_FILTER_CUBIC',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_FILTER_FANT',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_FILTER_BOX',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_FILTER_TRIANGLE',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_FILTER_DITHER',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_FILTER_DITHER_DIFFUSION',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
             description: 'TEX_FILTER_WRAP_U',
             controlWidget: Checkbox(
               value: true,
@@ -117,6 +61,90 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
           ),
           SettingsItemWithTitle(
             description: 'TEX_FILTER_MIRROR_W',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_SEPARATE_ALPHA',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_FLOAT_X2BIAS',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_RGB_COPY_RED',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_RGB_COPY_GREEN',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_RGB_COPY_BLUE',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_DITHER',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_POINT',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_LINEAR',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_CUBIC',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_BOX',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_FANT',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_FILTER_TRIANGLE',
             controlWidget: Checkbox(
               value: true,
               onChanged: (value) {},

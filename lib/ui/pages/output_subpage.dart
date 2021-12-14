@@ -32,13 +32,6 @@ class _OutputSubpageState extends State<OutputSubpage> {
             ),
           ),
           SettingsItemWithTitle(
-            description: 'DDS_FLAGS_BAD_DXTN_TAILS',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
             description: 'DDS_FLAGS_NO_LEGACY_EXPANSION',
             controlWidget: Checkbox(
               value: true,
@@ -74,6 +67,13 @@ class _OutputSubpageState extends State<OutputSubpage> {
             ),
           ),
           SettingsItemWithTitle(
+            description: 'DDS_FLAGS_BAD_DXTN_TAILS',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
             description: 'DDS_FLAGS_FORCE_DX10_EXT',
             controlWidget: Checkbox(
               value: true,
@@ -82,6 +82,20 @@ class _OutputSubpageState extends State<OutputSubpage> {
           ),
           SettingsItemWithTitle(
             description: 'DDS_FLAGS_FORCE_DX10_EXT_MISC2',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'DDS_FLAGS_FORCE_DX9_LEGACY',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'DDS_FLAGS_ALLOW_LARGE_FILES',
             controlWidget: Checkbox(
               value: true,
               onChanged: (value) {},

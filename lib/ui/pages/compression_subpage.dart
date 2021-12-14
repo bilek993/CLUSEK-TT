@@ -89,7 +89,14 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
             ),
           ),
           SettingsItemWithTitle(
-            description: 'TEX_COMPRESS_PARALLEL',
+            description: 'TEX_COMPRESS_BC7_USE_3SUBSETS',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
+            description: 'TEX_COMPRESS_BC7_QUICK',
             controlWidget: Checkbox(
               value: true,
               onChanged: (value) {},
@@ -110,14 +117,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
             ),
           ),
           SettingsItemWithTitle(
-            description: 'TEX_COMPRESS_BC7_USE_3SUBSETS',
-            controlWidget: Checkbox(
-              value: true,
-              onChanged: (value) {},
-            ),
-          ),
-          SettingsItemWithTitle(
-            description: 'TEX_COMPRESS_BC7_QUICK',
+            description: 'TEX_COMPRESS_PARALLEL',
             controlWidget: Checkbox(
               value: true,
               onChanged: (value) {},

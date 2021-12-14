@@ -81,6 +81,13 @@ class _InputSubpageState extends State<InputSubpage> {
             ),
           ),
           SettingsItemWithTitle(
+            description: 'WIC_FLAGS_DEFAULT_SRGB',
+            controlWidget: Checkbox(
+              value: true,
+              onChanged: (value) {},
+            ),
+          ),
+          SettingsItemWithTitle(
             description: 'WIC_FLAGS_DITHER',
             controlWidget: Checkbox(
               value: true,
