@@ -18,8 +18,8 @@
     "supportedOutputImageFiles": "DirectDraw Surface (*.dds)",
     "selectedCompressionAlgorithm": "Wybrany algorytm:",
     "threshold": "Wartość progowa:",
-    "albedoPresetName": "Tekstury Albedo",
-    "emissivePresetName": "Tekstury Emissive",
-    "combinedDataPresetName": "Tekstury Combined Data",
-    "normalDataPresetName": "Tekstury Normal"
+    "albedoPresetName": "Tekstury 'Albedo'",
+    "emissivePresetName": "Tekstury 'Emissive'",
+    "combinedDataPresetName": "Tekstury 'Combined Data'",
+    "normalDataPresetName": "Tekstury 'Normal'"
 }
