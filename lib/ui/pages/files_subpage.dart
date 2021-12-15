@@ -15,7 +15,7 @@ class FilesSubpage extends StatefulWidget {
 }
 
 class _FilesSubpageState extends State<FilesSubpage> {
-  CoreCubit? cubit;
+  late final CoreCubit cubit;
 
   final Logger _log = locator.get();
   final ScrollController _scrollController = ScrollController();
@@ -47,7 +47,7 @@ class _FilesSubpageState extends State<FilesSubpage> {
             description: AppLocalizations.of(context)!.inputFilePath,
             controlWidget: TextFormField(
               controller: _inputTextEditingController,
-              onChanged: (value) => cubit?.setInputFilePath(value),
+              onChanged: (value) => cubit.setInputFilePath(value),
             ),
             actionButton: ElevatedButton(
               child: Text(AppLocalizations.of(context)!.selectAction),
@@ -58,7 +58,7 @@ class _FilesSubpageState extends State<FilesSubpage> {
             description: AppLocalizations.of(context)!.outputFilePath,
             controlWidget: TextFormField(
               controller: _outputTextEditingController,
-              onChanged: (value) => cubit?.setOutputFilePath(value),
+              onChanged: (value) => cubit.setOutputFilePath(value),
             ),
             actionButton: ElevatedButton(
               child: Text(AppLocalizations.of(context)!.selectAction),
@@ -72,7 +72,7 @@ class _FilesSubpageState extends State<FilesSubpage> {
                 controlWidget: Checkbox(
                   value: state.automaticOutputFilePath,
                   onChanged: (value) =>
-                      cubit?.setAutomaticOutputFilePath(value ?? false),
+                      cubit.setAutomaticOutputFilePath(value ?? false),
                 ),
               );
             },
@@ -99,7 +99,7 @@ class _FilesSubpageState extends State<FilesSubpage> {
 
       _log.i("File '$path' has been selected...");
       _inputTextEditingController.text = path;
-      cubit?.setInputFilePath(path);
+      cubit.setInputFilePath(path);
     }
   }
 
@@ -120,7 +120,7 @@ class _FilesSubpageState extends State<FilesSubpage> {
 
       _log.i("Location '$path' for a new file has been selected...");
       _outputTextEditingController.text = path;
-      cubit?.setOutputFilePath(path);
+      cubit.setOutputFilePath(path);
     }
   }
 }

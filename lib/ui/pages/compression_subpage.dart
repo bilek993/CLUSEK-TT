@@ -15,7 +15,7 @@ class CompressionSubpage extends StatefulWidget {
 }
 
 class _CompressionSubpageState extends State<CompressionSubpage> {
-  CoreCubit? cubit;
+  late final CoreCubit cubit;
 
   final ScrollController _scrollController = ScrollController();
 
@@ -80,7 +80,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value: state.texCompressMask
                       .checkFlag(TexCompressFlags.rgbDither),
-                  onChanged: (value) => cubit?.setTexCompressMask(state
+                  onChanged: (value) => cubit.setTexCompressMask(state
                       .texCompressMask
                       .flipFlag(TexCompressFlags.rgbDither)),
                 ),
@@ -90,7 +90,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texCompressMask.checkFlag(TexCompressFlags.aDither),
-                  onChanged: (value) => cubit?.setTexCompressMask(
+                  onChanged: (value) => cubit.setTexCompressMask(
                       state.texCompressMask.flipFlag(TexCompressFlags.aDither)),
                 ),
               ),
@@ -99,7 +99,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texCompressMask.checkFlag(TexCompressFlags.dither),
-                  onChanged: (value) => cubit?.setTexCompressMask(
+                  onChanged: (value) => cubit.setTexCompressMask(
                       state.texCompressMask.flipFlag(TexCompressFlags.dither)),
                 ),
               ),
@@ -108,7 +108,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texCompressMask.checkFlag(TexCompressFlags.uniform),
-                  onChanged: (value) => cubit?.setTexCompressMask(
+                  onChanged: (value) => cubit.setTexCompressMask(
                       state.texCompressMask.flipFlag(TexCompressFlags.uniform)),
                 ),
               ),
@@ -117,7 +117,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value: state.texCompressMask
                       .checkFlag(TexCompressFlags.bc7Use3Subsets),
-                  onChanged: (value) => cubit?.setTexCompressMask(state
+                  onChanged: (value) => cubit.setTexCompressMask(state
                       .texCompressMask
                       .flipFlag(TexCompressFlags.bc7Use3Subsets)),
                 ),
@@ -127,7 +127,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value: state.texCompressMask
                       .checkFlag(TexCompressFlags.bc7Quick),
-                  onChanged: (value) => cubit?.setTexCompressMask(state
+                  onChanged: (value) => cubit.setTexCompressMask(state
                       .texCompressMask
                       .flipFlag(TexCompressFlags.bc7Quick)),
                 ),
@@ -137,7 +137,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texCompressMask.checkFlag(TexCompressFlags.srgbIn),
-                  onChanged: (value) => cubit?.setTexCompressMask(
+                  onChanged: (value) => cubit.setTexCompressMask(
                       state.texCompressMask.flipFlag(TexCompressFlags.srgbIn)),
                 ),
               ),
@@ -146,7 +146,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texCompressMask.checkFlag(TexCompressFlags.srgbOut),
-                  onChanged: (value) => cubit?.setTexCompressMask(
+                  onChanged: (value) => cubit.setTexCompressMask(
                       state.texCompressMask.flipFlag(TexCompressFlags.srgbOut)),
                 ),
               ),
@@ -155,7 +155,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 controlWidget: Checkbox(
                   value: state.texCompressMask
                       .checkFlag(TexCompressFlags.parallel),
-                  onChanged: (value) => cubit?.setTexCompressMask(state
+                  onChanged: (value) => cubit.setTexCompressMask(state
                       .texCompressMask
                       .flipFlag(TexCompressFlags.parallel)),
                 ),

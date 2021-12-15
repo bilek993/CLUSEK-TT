@@ -13,7 +13,7 @@ class MipmapsSubpage extends StatefulWidget {
 }
 
 class _MipmapsSubpageState extends State<MipmapsSubpage> {
-  CoreCubit? cubit;
+  late final CoreCubit cubit;
 
   final ScrollController _scrollController = ScrollController();
 
@@ -43,7 +43,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_WRAP_U',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.wrapU),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.wrapU)),
                 ),
               ),
@@ -51,7 +51,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_WRAP_V',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.wrapV),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.wrapV)),
                 ),
               ),
@@ -59,7 +59,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_WRAP_W',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.wrapW),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.wrapW)),
                 ),
               ),
@@ -67,7 +67,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_MIRROR_U',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.mirrorU),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.mirrorU)),
                 ),
               ),
@@ -75,7 +75,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_MIRROR_V',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.mirrorV),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.mirrorV)),
                 ),
               ),
@@ -83,7 +83,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_MIRROR_W',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.mirrorW),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.mirrorW)),
                 ),
               ),
@@ -92,7 +92,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 controlWidget: Checkbox(
                   value: state.texFilterMask
                       .checkFlag(TexFilterFlags.separateAlpha),
-                  onChanged: (value) => cubit?.setTexFilterMask(state
+                  onChanged: (value) => cubit.setTexFilterMask(state
                       .texFilterMask
                       .flipFlag(TexFilterFlags.separateAlpha)),
                 ),
@@ -102,7 +102,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texFilterMask.checkFlag(TexFilterFlags.floatX2Bias),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.floatX2Bias)),
                 ),
               ),
@@ -111,7 +111,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texFilterMask.checkFlag(TexFilterFlags.rgbCopyRed),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.rgbCopyRed)),
                 ),
               ),
@@ -120,7 +120,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 controlWidget: Checkbox(
                   value: state.texFilterMask
                       .checkFlag(TexFilterFlags.rgbCopyGreen),
-                  onChanged: (value) => cubit?.setTexFilterMask(state
+                  onChanged: (value) => cubit.setTexFilterMask(state
                       .texFilterMask
                       .flipFlag(TexFilterFlags.rgbCopyGreen)),
                 ),
@@ -130,7 +130,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.texFilterMask.checkFlag(TexFilterFlags.rgbCopyBlue),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.rgbCopyBlue)),
                 ),
               ),
@@ -138,7 +138,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_DITHER',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.dither),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.dither)),
                 ),
               ),
@@ -146,7 +146,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_POINT',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.point),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.point)),
                 ),
               ),
@@ -154,7 +154,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_LINEAR',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.linear),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.linear)),
                 ),
               ),
@@ -162,7 +162,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_CUBIC',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.cubic),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.cubic)),
                 ),
               ),
@@ -170,7 +170,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_BOX',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.box),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.box)),
                 ),
               ),
@@ -178,7 +178,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_FANT',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.fant),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.fant)),
                 ),
               ),
@@ -186,7 +186,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_TRIANGLE',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.triangle),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.triangle)),
                 ),
               ),
@@ -194,7 +194,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_SRGB_IN',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.srgbIn),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.srgbIn)),
                 ),
               ),
@@ -202,7 +202,7 @@ class _MipmapsSubpageState extends State<MipmapsSubpage> {
                 description: 'TEX_FILTER_SRGB_OUT',
                 controlWidget: Checkbox(
                   value: state.texFilterMask.checkFlag(TexFilterFlags.srgbOut),
-                  onChanged: (value) => cubit?.setTexFilterMask(
+                  onChanged: (value) => cubit.setTexFilterMask(
                       state.texFilterMask.flipFlag(TexFilterFlags.srgbOut)),
                 ),
               ),

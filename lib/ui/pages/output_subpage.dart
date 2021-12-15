@@ -13,7 +13,7 @@ class OutputSubpage extends StatefulWidget {
 }
 
 class _OutputSubpageState extends State<OutputSubpage> {
-  CoreCubit? cubit;
+  late final CoreCubit cubit;
 
   final ScrollController _scrollController = ScrollController();
 
@@ -43,7 +43,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_LEGACY_DWORD',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.legacyDword),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.legacyDword)),
                 ),
               ),
@@ -52,7 +52,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.ddsFlagsMask.checkFlag(DdsFlags.noLegacyExpansion),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.noLegacyExpansion)),
                 ),
               ),
@@ -61,7 +61,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.ddsFlagsMask.checkFlag(DdsFlags.nor10b10g10a2FixUp),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.nor10b10g10a2FixUp)),
                 ),
               ),
@@ -69,7 +69,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_FORCE_RGB',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.forceRgb),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.forceRgb)),
                 ),
               ),
@@ -77,7 +77,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_NO_16BPP',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.no16bpp),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.no16bpp)),
                 ),
               ),
@@ -85,7 +85,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_EXPAND_LUMINANCE',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.expandLuminance),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.expandLuminance)),
                 ),
               ),
@@ -93,7 +93,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_BAD_DXTN_TAILS',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.badDxtnTails),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.badDxtnTails)),
                 ),
               ),
@@ -101,7 +101,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_FORCE_DX10_EXT',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.forceDx10Ext),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.forceDx10Ext)),
                 ),
               ),
@@ -110,7 +110,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 controlWidget: Checkbox(
                   value:
                       state.ddsFlagsMask.checkFlag(DdsFlags.forceDx10ExtMisc2),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.forceDx10ExtMisc2)),
                 ),
               ),
@@ -118,7 +118,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_FORCE_DX9_LEGACY',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.forceDx9Legacy),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.forceDx9Legacy)),
                 ),
               ),
@@ -126,7 +126,7 @@ class _OutputSubpageState extends State<OutputSubpage> {
                 description: 'DDS_FLAGS_ALLOW_LARGE_FILES',
                 controlWidget: Checkbox(
                   value: state.ddsFlagsMask.checkFlag(DdsFlags.allowLargeFiles),
-                  onChanged: (value) => cubit?.setDdsFlagsMask(
+                  onChanged: (value) => cubit.setDdsFlagsMask(
                       state.ddsFlagsMask.flipFlag(DdsFlags.allowLargeFiles)),
                 ),
               ),

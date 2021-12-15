@@ -13,7 +13,7 @@ class InputSubpage extends StatefulWidget {
 }
 
 class _InputSubpageState extends State<InputSubpage> {
-  CoreCubit? cubit;
+  late final CoreCubit cubit;
 
   final ScrollController _scrollController = ScrollController();
 
@@ -43,7 +43,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_FORCE_RGB',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.forceRgb),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.forceRgb)),
                 ),
               ),
@@ -51,7 +51,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_NO_X2_BIAS',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.noX2Bias),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.noX2Bias)),
                 ),
               ),
@@ -59,7 +59,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_NO_16BPP',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.no16Bpp),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.no16Bpp)),
                 ),
               ),
@@ -67,7 +67,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_ALLOW_MONO',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.allowMono),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.allowMono)),
                 ),
               ),
@@ -75,7 +75,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_ALL_FRAMES',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.allFrames),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.allFrames)),
                 ),
               ),
@@ -83,7 +83,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_IGNORE_SRGB',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.ignoreSrgb),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.ignoreSrgb)),
                 ),
               ),
@@ -91,7 +91,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_FORCE_SRGB',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.forceSrgb),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.forceSrgb)),
                 ),
               ),
@@ -99,7 +99,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_FORCE_LINEAR',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.forceLinear),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.forceLinear)),
                 ),
               ),
@@ -107,7 +107,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_DEFAULT_SRGB',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.defaultSrgb),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.defaultSrgb)),
                 ),
               ),
@@ -115,7 +115,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_DITHER',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.dither),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.dither)),
                 ),
               ),
@@ -123,7 +123,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_DITHER_DIFFUSION',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.ditherDiffusion),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.ditherDiffusion)),
                 ),
               ),
@@ -131,7 +131,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_FILTER_POINT',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.filterPoint),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.filterPoint)),
                 ),
               ),
@@ -139,7 +139,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_FILTER_LINEAR',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.filterLinear),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.filterLinear)),
                 ),
               ),
@@ -147,7 +147,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_FILTER_CUBIC',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.filterCubic),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.filterCubic)),
                 ),
               ),
@@ -155,7 +155,7 @@ class _InputSubpageState extends State<InputSubpage> {
                 description: 'WIC_FLAGS_FILTER_FANT',
                 controlWidget: Checkbox(
                   value: state.wicFlagsMask.checkFlag(WicFlags.filterFant),
-                  onChanged: (value) => cubit?.setWicFlagsMask(
+                  onChanged: (value) => cubit.setWicFlagsMask(
                       state.wicFlagsMask.flipFlag(WicFlags.filterFant)),
                 ),
               ),
