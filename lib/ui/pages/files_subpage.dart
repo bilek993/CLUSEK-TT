@@ -27,7 +27,10 @@ class _FilesSubpageState extends State<FilesSubpage> {
   @override
   void initState() {
     super.initState();
+
     cubit = BlocProvider.of<CoreCubit>(context);
+    _inputTextEditingController.text = cubit.state.inputFilePath;
+    _outputTextEditingController.text = cubit.state.outputFilePath;
   }
 
   @override
