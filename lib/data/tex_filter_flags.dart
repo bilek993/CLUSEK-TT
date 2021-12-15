@@ -9,9 +9,9 @@ class TexFilterFlags {
   static const mirrorW = 0x40;
   static const separateAlpha = 0x100;
   static const floatX2Bias = 0x200;
-  static const RgbCopyRed = 0x1000;
-  static const RgbCopyGreen = 0x2000;
-  static const RgbCopyBlue = 0x4000;
+  static const rgbCopyRed = 0x1000;
+  static const rgbCopyGreen = 0x2000;
+  static const rgbCopyBlue = 0x4000;
   static const dither = 0x10000;
   static const ditherDiffusion = 0x20000;
   static const point = 0x100000;
