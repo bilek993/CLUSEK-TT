@@ -17,5 +17,9 @@
     "selectOutputImageDialogTitle": "Select location for the output file...",
     "supportedOutputImageFiles": "DirectDraw Surface (*.dds)",
     "selectedCompressionAlgorithm": "Selected algorithm:",
-    "threshold": "Threshold"
+    "threshold": "Threshold",
+    "albedoPresetName": "Albedo Maps",
+    "emissivePresetName": "Emissive Maps",
+    "combinedDataPresetName": "Combined Data Maps",
+    "normalDataPresetName": "Normal Maps"
 }

@@ -17,5 +17,9 @@
     "selectOutputImageDialogTitle": "Wybierz nazwę i lokalizację pliku wynikowego...",
     "supportedOutputImageFiles": "DirectDraw Surface (*.dds)",
     "selectedCompressionAlgorithm": "Wybrany algorytm:",
-    "threshold": "Wartość progowa:"
+    "threshold": "Wartość progowa:",
+    "albedoPresetName": "Tekstury Albedo",
+    "emissivePresetName": "Tekstury Emissive",
+    "combinedDataPresetName": "Tekstury Combined Data",
+    "normalDataPresetName": "Tekstury Normal"
 }
