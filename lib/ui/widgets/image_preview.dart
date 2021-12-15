@@ -30,6 +30,10 @@ class ImagePreview extends StatelessWidget {
     }
 
     try {
+      File file = File(pathToFile!);
+      if (!file.existsSync()) {
+        throw const FileSystemException("File doesn't exist!");
+      }
       return File(pathToFile!);
     } catch (e) {
       _log.d('Incorrect path to image provided!');

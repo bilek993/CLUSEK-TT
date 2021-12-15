@@ -75,7 +75,12 @@ class HomePage extends StatelessWidget {
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(8.0, 16.0, 16.0, 16.0),
-                child: ImagePreview(pathToFile: null),
+                child: BlocBuilder<CoreCubit, CoreState>(
+                  bloc: cubitCore,
+                  builder: (context, state) {
+                    return ImagePreview(pathToFile: state.inputFilePath);
+                  },
+                ),
               ),
             ),
           ),
