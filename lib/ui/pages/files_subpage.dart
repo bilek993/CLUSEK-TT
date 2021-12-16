@@ -57,16 +57,27 @@ class _FilesSubpageState extends State<FilesSubpage> {
               onPressed: () => _openFileSelectorAction(context),
             ),
           ),
-          SettingsItemWithTitle(
-            description: AppLocalizations.of(context)!.outputFilePath,
-            controlWidget: TextFormField(
-              controller: _outputTextEditingController,
-              onChanged: (value) => cubit.setOutputFilePath(value),
-            ),
-            actionButton: ElevatedButton(
-              child: Text(AppLocalizations.of(context)!.selectAction),
-              onPressed: () => _saveFileSelectorAction(context),
-            ),
+          BlocBuilder<CoreCubit, CoreState>(
+            bloc: cubit,
+            builder: (context, state) {
+              return SettingsItemWithTitle(
+                description: AppLocalizations.of(context)!.outputFilePath,
+                controlWidget: BlocListener<CoreCubit, CoreState>(
+                  listener: _handleAutoOutputTextUpdating,
+                  child: TextFormField(
+                    controller: _outputTextEditingController,
+                    enabled: !state.automaticOutputFilePath,
+                    onChanged: (value) => cubit.setOutputFilePath(value),
+                  ),
+                ),
+                actionButton: ElevatedButton(
+                  child: Text(AppLocalizations.of(context)!.selectAction),
+                  onPressed: state.automaticOutputFilePath
+                      ? null
+                      : () => _saveFileSelectorAction(context),
+                ),
+              );
+            },
           ),
           BlocBuilder<CoreCubit, CoreState>(
             builder: (context, state) {
@@ -83,6 +94,13 @@ class _FilesSubpageState extends State<FilesSubpage> {
         ],
       ),
     );
+  }
+
+  void _handleAutoOutputTextUpdating(BuildContext context, CoreState state) {
+    if (_outputTextEditingController.text != state.outputFilePath &&
+        state.automaticOutputFilePath) {
+      _outputTextEditingController.text = state.outputFilePath;
+    }
   }
 
   void _openFileSelectorAction(BuildContext context) {
