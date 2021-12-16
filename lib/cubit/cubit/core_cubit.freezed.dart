@@ -21,7 +21,7 @@ class _$CoreStateTearOff {
       {int selectedSubpage = 0,
       String inputFilePath = '',
       String outputFilePath = '',
-      bool automaticOutputFilePath = false,
+      bool automaticOutputFilePath = true,
       double threshold = 0.5,
       String selectedAlgorithm = 'DXGI_FORMAT_BC7_UNORM',
       int wicFlagsMask = 0x0,
@@ -305,7 +305,7 @@ class _$_Initial implements _Initial {
       {this.selectedSubpage = 0,
       this.inputFilePath = '',
       this.outputFilePath = '',
-      this.automaticOutputFilePath = false,
+      this.automaticOutputFilePath = true,
       this.threshold = 0.5,
       this.selectedAlgorithm = 'DXGI_FORMAT_BC7_UNORM',
       this.wicFlagsMask = 0x0,
@@ -322,7 +322,7 @@ class _$_Initial implements _Initial {
   @JsonKey(defaultValue: '')
   @override
   final String outputFilePath;
-  @JsonKey(defaultValue: false)
+  @JsonKey(defaultValue: true)
   @override
   final bool automaticOutputFilePath;
   @JsonKey(defaultValue: 0.5)

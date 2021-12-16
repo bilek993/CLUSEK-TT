@@ -6,7 +6,7 @@ class CoreState with _$CoreState {
     @Default(0) int selectedSubpage,
     @Default('') String inputFilePath,
     @Default('') String outputFilePath,
-    @Default(false) bool automaticOutputFilePath,
+    @Default(true) bool automaticOutputFilePath,
     @Default(0.5) double threshold,
     @Default('DXGI_FORMAT_BC7_UNORM') String selectedAlgorithm,
     @Default(0x0) int wicFlagsMask,
