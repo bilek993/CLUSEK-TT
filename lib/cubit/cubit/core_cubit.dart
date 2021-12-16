@@ -22,6 +22,22 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(selectedSubpage: page));
   }
 
+  void setAlbedoPreset() {
+    _log.i('Setting aldebo preset...');
+  }
+
+  void setEmissivePreset() {
+    _log.i('Setting emissive preset...');
+  }
+
+  void setCombinedDataPreset() {
+    _log.i('Setting combined data preset...');
+  }
+
+  void setNormalPreset() {
+    _log.i('Setting normal preset...');
+  }
+
   void setInputFilePath(String value) {
     if (state.automaticOutputFilePath) {
       String outputValue = value.replaceAll(RegExp(r'\.\w+$'), '.dds');

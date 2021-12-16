@@ -1,4 +1,6 @@
+import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PresetsSubpage extends StatefulWidget {
@@ -9,7 +11,16 @@ class PresetsSubpage extends StatefulWidget {
 }
 
 class _PresetsSubpageState extends State<PresetsSubpage> {
+  late final CoreCubit cubit;
+
   final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    cubit = BlocProvider.of<CoreCubit>(context);
+  }
 
   @override
   void dispose() {
@@ -31,19 +42,19 @@ class _PresetsSubpageState extends State<PresetsSubpage> {
       controller: _scrollController,
       children: [
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => cubit.setAlbedoPreset(),
           child: Text(AppLocalizations.of(context)!.albedoPresetName),
         ),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => cubit.setEmissivePreset(),
           child: Text(AppLocalizations.of(context)!.emissivePresetName),
         ),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => cubit.setCombinedDataPreset(),
           child: Text(AppLocalizations.of(context)!.combinedDataPresetName),
         ),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => cubit.setNormalPreset(),
           child: Text(AppLocalizations.of(context)!.normalDataPresetName),
         ),
       ],
