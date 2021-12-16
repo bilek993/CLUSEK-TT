@@ -17,12 +17,16 @@ class CompressionSubpage extends StatefulWidget {
 class _CompressionSubpageState extends State<CompressionSubpage> {
   late final CoreCubit cubit;
 
+  final TextEditingController _thresholdEditingController =
+      TextEditingController();
   final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
+
     cubit = BlocProvider.of<CoreCubit>(context);
+    _thresholdEditingController.text = cubit.state.threshold.toString();
   }
 
   @override
@@ -45,6 +49,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                 description:
                     AppLocalizations.of(context)!.selectedCompressionAlgorithm,
                 controlWidget: OutlinedDropdownButton(
+                  selectedItem: state.selectedAlgorithm,
                   items: const [
                     'DXGI_FORMAT_BC1_TYPELESS',
                     'DXGI_FORMAT_BC1_UNORM',
@@ -68,12 +73,16 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                     'DXGI_FORMAT_BC7_UNORM',
                     'DXGI_FORMAT_BC7_UNORM_SRGB',
                   ],
-                  onItemChanged: (value) {},
+                  onItemChanged: (value) => cubit.setAlgorithm(value),
                 ),
               ),
               SettingsItemWithTitle(
                 description: AppLocalizations.of(context)!.threshold,
-                controlWidget: const TextField(),
+                controlWidget: TextField(
+                  controller: _thresholdEditingController,
+                  keyboardType: TextInputType.number,
+                  onChanged: (value) => cubit.setThreshold(value),
+                ),
               ),
               SettingsItemWithTitle(
                 description: 'TEX_COMPRESS_RGB_DITHER',

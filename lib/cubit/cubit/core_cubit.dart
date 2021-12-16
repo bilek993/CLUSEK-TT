@@ -34,6 +34,19 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(automaticOutputFilePath: value));
   }
 
+  void setAlgorithm(String value) {
+    emit(state.copyWith(selectedAlgorithm: value));
+  }
+
+  void setThreshold(String thresholdAsText) {
+    try {
+      double thresholdAsNumeric = double.parse(thresholdAsText);
+      emit(state.copyWith(threshold: thresholdAsNumeric));
+    } catch (e) {
+      _log.e(e.toString());
+    }
+  }
+
   void setWicFlagsMask(int mask) {
     emit(state.copyWith(wicFlagsMask: mask));
   }

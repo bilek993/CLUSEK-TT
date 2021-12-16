@@ -22,6 +22,8 @@ class _$CoreStateTearOff {
       String inputFilePath = '',
       String outputFilePath = '',
       bool automaticOutputFilePath = false,
+      double threshold = 0.5,
+      String selectedAlgorithm = 'DXGI_FORMAT_BC7_UNORM',
       int wicFlagsMask = 0x0,
       int texFilterMask = 0x0,
       int texCompressMask = 0x0,
@@ -31,6 +33,8 @@ class _$CoreStateTearOff {
       inputFilePath: inputFilePath,
       outputFilePath: outputFilePath,
       automaticOutputFilePath: automaticOutputFilePath,
+      threshold: threshold,
+      selectedAlgorithm: selectedAlgorithm,
       wicFlagsMask: wicFlagsMask,
       texFilterMask: texFilterMask,
       texCompressMask: texCompressMask,
@@ -48,6 +52,8 @@ mixin _$CoreState {
   String get inputFilePath => throw _privateConstructorUsedError;
   String get outputFilePath => throw _privateConstructorUsedError;
   bool get automaticOutputFilePath => throw _privateConstructorUsedError;
+  double get threshold => throw _privateConstructorUsedError;
+  String get selectedAlgorithm => throw _privateConstructorUsedError;
   int get wicFlagsMask => throw _privateConstructorUsedError;
   int get texFilterMask => throw _privateConstructorUsedError;
   int get texCompressMask => throw _privateConstructorUsedError;
@@ -60,6 +66,8 @@ mixin _$CoreState {
             String inputFilePath,
             String outputFilePath,
             bool automaticOutputFilePath,
+            double threshold,
+            String selectedAlgorithm,
             int wicFlagsMask,
             int texFilterMask,
             int texCompressMask,
@@ -74,6 +82,8 @@ mixin _$CoreState {
             String inputFilePath,
             String outputFilePath,
             bool automaticOutputFilePath,
+            double threshold,
+            String selectedAlgorithm,
             int wicFlagsMask,
             int texFilterMask,
             int texCompressMask,
@@ -88,6 +98,8 @@ mixin _$CoreState {
             String inputFilePath,
             String outputFilePath,
             bool automaticOutputFilePath,
+            double threshold,
+            String selectedAlgorithm,
             int wicFlagsMask,
             int texFilterMask,
             int texCompressMask,
@@ -127,6 +139,8 @@ abstract class $CoreStateCopyWith<$Res> {
       String inputFilePath,
       String outputFilePath,
       bool automaticOutputFilePath,
+      double threshold,
+      String selectedAlgorithm,
       int wicFlagsMask,
       int texFilterMask,
       int texCompressMask,
@@ -147,6 +161,8 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
     Object? inputFilePath = freezed,
     Object? outputFilePath = freezed,
     Object? automaticOutputFilePath = freezed,
+    Object? threshold = freezed,
+    Object? selectedAlgorithm = freezed,
     Object? wicFlagsMask = freezed,
     Object? texFilterMask = freezed,
     Object? texCompressMask = freezed,
@@ -169,6 +185,14 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
           ? _value.automaticOutputFilePath
           : automaticOutputFilePath // ignore: cast_nullable_to_non_nullable
               as bool,
+      threshold: threshold == freezed
+          ? _value.threshold
+          : threshold // ignore: cast_nullable_to_non_nullable
+              as double,
+      selectedAlgorithm: selectedAlgorithm == freezed
+          ? _value.selectedAlgorithm
+          : selectedAlgorithm // ignore: cast_nullable_to_non_nullable
+              as String,
       wicFlagsMask: wicFlagsMask == freezed
           ? _value.wicFlagsMask
           : wicFlagsMask // ignore: cast_nullable_to_non_nullable
@@ -199,6 +223,8 @@ abstract class _$InitialCopyWith<$Res> implements $CoreStateCopyWith<$Res> {
       String inputFilePath,
       String outputFilePath,
       bool automaticOutputFilePath,
+      double threshold,
+      String selectedAlgorithm,
       int wicFlagsMask,
       int texFilterMask,
       int texCompressMask,
@@ -220,6 +246,8 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
     Object? inputFilePath = freezed,
     Object? outputFilePath = freezed,
     Object? automaticOutputFilePath = freezed,
+    Object? threshold = freezed,
+    Object? selectedAlgorithm = freezed,
     Object? wicFlagsMask = freezed,
     Object? texFilterMask = freezed,
     Object? texCompressMask = freezed,
@@ -242,6 +270,14 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
           ? _value.automaticOutputFilePath
           : automaticOutputFilePath // ignore: cast_nullable_to_non_nullable
               as bool,
+      threshold: threshold == freezed
+          ? _value.threshold
+          : threshold // ignore: cast_nullable_to_non_nullable
+              as double,
+      selectedAlgorithm: selectedAlgorithm == freezed
+          ? _value.selectedAlgorithm
+          : selectedAlgorithm // ignore: cast_nullable_to_non_nullable
+              as String,
       wicFlagsMask: wicFlagsMask == freezed
           ? _value.wicFlagsMask
           : wicFlagsMask // ignore: cast_nullable_to_non_nullable
@@ -270,6 +306,8 @@ class _$_Initial implements _Initial {
       this.inputFilePath = '',
       this.outputFilePath = '',
       this.automaticOutputFilePath = false,
+      this.threshold = 0.5,
+      this.selectedAlgorithm = 'DXGI_FORMAT_BC7_UNORM',
       this.wicFlagsMask = 0x0,
       this.texFilterMask = 0x0,
       this.texCompressMask = 0x0,
@@ -287,6 +325,12 @@ class _$_Initial implements _Initial {
   @JsonKey(defaultValue: false)
   @override
   final bool automaticOutputFilePath;
+  @JsonKey(defaultValue: 0.5)
+  @override
+  final double threshold;
+  @JsonKey(defaultValue: 'DXGI_FORMAT_BC7_UNORM')
+  @override
+  final String selectedAlgorithm;
   @JsonKey(defaultValue: 0x0)
   @override
   final int wicFlagsMask;
@@ -302,7 +346,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath, wicFlagsMask: $wicFlagsMask, texFilterMask: $texFilterMask, texCompressMask: $texCompressMask, ddsFlagsMask: $ddsFlagsMask)';
+    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath, threshold: $threshold, selectedAlgorithm: $selectedAlgorithm, wicFlagsMask: $wicFlagsMask, texFilterMask: $texFilterMask, texCompressMask: $texCompressMask, ddsFlagsMask: $ddsFlagsMask)';
   }
 
   @override
@@ -318,6 +362,9 @@ class _$_Initial implements _Initial {
                 .equals(other.outputFilePath, outputFilePath) &&
             const DeepCollectionEquality().equals(
                 other.automaticOutputFilePath, automaticOutputFilePath) &&
+            const DeepCollectionEquality().equals(other.threshold, threshold) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedAlgorithm, selectedAlgorithm) &&
             const DeepCollectionEquality()
                 .equals(other.wicFlagsMask, wicFlagsMask) &&
             const DeepCollectionEquality()
@@ -335,6 +382,8 @@ class _$_Initial implements _Initial {
       const DeepCollectionEquality().hash(inputFilePath),
       const DeepCollectionEquality().hash(outputFilePath),
       const DeepCollectionEquality().hash(automaticOutputFilePath),
+      const DeepCollectionEquality().hash(threshold),
+      const DeepCollectionEquality().hash(selectedAlgorithm),
       const DeepCollectionEquality().hash(wicFlagsMask),
       const DeepCollectionEquality().hash(texFilterMask),
       const DeepCollectionEquality().hash(texCompressMask),
@@ -353,6 +402,8 @@ class _$_Initial implements _Initial {
             String inputFilePath,
             String outputFilePath,
             bool automaticOutputFilePath,
+            double threshold,
+            String selectedAlgorithm,
             int wicFlagsMask,
             int texFilterMask,
             int texCompressMask,
@@ -364,6 +415,8 @@ class _$_Initial implements _Initial {
         inputFilePath,
         outputFilePath,
         automaticOutputFilePath,
+        threshold,
+        selectedAlgorithm,
         wicFlagsMask,
         texFilterMask,
         texCompressMask,
@@ -378,6 +431,8 @@ class _$_Initial implements _Initial {
             String inputFilePath,
             String outputFilePath,
             bool automaticOutputFilePath,
+            double threshold,
+            String selectedAlgorithm,
             int wicFlagsMask,
             int texFilterMask,
             int texCompressMask,
@@ -389,6 +444,8 @@ class _$_Initial implements _Initial {
         inputFilePath,
         outputFilePath,
         automaticOutputFilePath,
+        threshold,
+        selectedAlgorithm,
         wicFlagsMask,
         texFilterMask,
         texCompressMask,
@@ -403,6 +460,8 @@ class _$_Initial implements _Initial {
             String inputFilePath,
             String outputFilePath,
             bool automaticOutputFilePath,
+            double threshold,
+            String selectedAlgorithm,
             int wicFlagsMask,
             int texFilterMask,
             int texCompressMask,
@@ -416,6 +475,8 @@ class _$_Initial implements _Initial {
           inputFilePath,
           outputFilePath,
           automaticOutputFilePath,
+          threshold,
+          selectedAlgorithm,
           wicFlagsMask,
           texFilterMask,
           texCompressMask,
@@ -459,6 +520,8 @@ abstract class _Initial implements CoreState {
       String inputFilePath,
       String outputFilePath,
       bool automaticOutputFilePath,
+      double threshold,
+      String selectedAlgorithm,
       int wicFlagsMask,
       int texFilterMask,
       int texCompressMask,
@@ -472,6 +535,10 @@ abstract class _Initial implements CoreState {
   String get outputFilePath;
   @override
   bool get automaticOutputFilePath;
+  @override
+  double get threshold;
+  @override
+  String get selectedAlgorithm;
   @override
   int get wicFlagsMask;
   @override

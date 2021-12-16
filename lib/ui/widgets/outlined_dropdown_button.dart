@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 
 class OutlinedDropdownButton extends StatefulWidget {
   final List<String> items;
+  final String selectedItem;
   final ValueChanged<String> onItemChanged;
 
   const OutlinedDropdownButton({
     Key? key,
     required this.items,
+    required this.selectedItem,
     required this.onItemChanged,
   }) : super(key: key);
 
   @override
   State<OutlinedDropdownButton> createState() =>
-      _OutlinedDropdownButtonState(items.first);
+      _OutlinedDropdownButtonState(selectedItem);
 }
 
 class _OutlinedDropdownButtonState extends State<OutlinedDropdownButton> {
