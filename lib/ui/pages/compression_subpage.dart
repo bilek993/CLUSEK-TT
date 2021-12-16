@@ -1,4 +1,5 @@
 import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
+import 'package:clusek_tt/data/compression_algorithms.dart';
 import 'package:clusek_tt/data/tex_compress_flags.dart';
 import 'package:clusek_tt/extensions/integer_bitwise_operations_extensions.dart';
 import 'package:clusek_tt/ui/widgets/outlined_dropdown_button.dart';
@@ -50,29 +51,7 @@ class _CompressionSubpageState extends State<CompressionSubpage> {
                     AppLocalizations.of(context)!.selectedCompressionAlgorithm,
                 controlWidget: OutlinedDropdownButton(
                   selectedItem: state.selectedAlgorithm,
-                  items: const [
-                    'DXGI_FORMAT_BC1_TYPELESS',
-                    'DXGI_FORMAT_BC1_UNORM',
-                    'DXGI_FORMAT_BC1_UNORM_SRGB',
-                    'DXGI_FORMAT_BC2_TYPELESS',
-                    'DXGI_FORMAT_BC2_UNORM',
-                    'DXGI_FORMAT_BC2_UNORM_SRGB',
-                    'DXGI_FORMAT_BC3_TYPELESS',
-                    'DXGI_FORMAT_BC3_UNORM',
-                    'DXGI_FORMAT_BC3_UNORM_SRGB',
-                    'DXGI_FORMAT_BC4_TYPELESS',
-                    'DXGI_FORMAT_BC4_UNORM',
-                    'DXGI_FORMAT_BC4_SNORM',
-                    'DXGI_FORMAT_BC5_TYPELESS',
-                    'DXGI_FORMAT_BC5_UNORM',
-                    'DXGI_FORMAT_BC5_SNORM',
-                    'DXGI_FORMAT_BC6H_TYPELESS',
-                    'DXGI_FORMAT_BC6H_UF16',
-                    'DXGI_FORMAT_BC6H_SF16',
-                    'DXGI_FORMAT_BC7_TYPELESS',
-                    'DXGI_FORMAT_BC7_UNORM',
-                    'DXGI_FORMAT_BC7_UNORM_SRGB',
-                  ],
+                  items: CompressionAlgorithms.all,
                   onItemChanged: (value) => cubit.setAlgorithm(value),
                 ),
               ),

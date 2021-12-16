@@ -1,4 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:clusek_tt/data/compression_algorithms.dart';
+import 'package:clusek_tt/data/tex_compress_flags.dart';
+import 'package:clusek_tt/data/tex_filter_flags.dart';
 import 'package:clusek_tt/services/locator.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:logger/logger.dart';
@@ -24,18 +27,33 @@ class CoreCubit extends Cubit<CoreState> {
 
   void setAlbedoPreset() {
     _log.i('Setting aldebo preset...');
+    emit(const CoreState.initial(
+      selectedAlgorithm: CompressionAlgorithms.bc1UnormSrgb,
+      texCompressMask: TexCompressFlags.srgbIn,
+    ));
   }
 
   void setEmissivePreset() {
     _log.i('Setting emissive preset...');
+    emit(const CoreState.initial(
+      selectedAlgorithm: CompressionAlgorithms.bc1UnormSrgb,
+      texCompressMask: TexCompressFlags.srgbIn,
+    ));
   }
 
   void setCombinedDataPreset() {
     _log.i('Setting combined data preset...');
+    emit(const CoreState.initial(
+      selectedAlgorithm: CompressionAlgorithms.bc7Unorm,
+    ));
   }
 
   void setNormalPreset() {
     _log.i('Setting normal preset...');
+    emit(const CoreState.initial(
+      selectedAlgorithm: CompressionAlgorithms.bc5Unorm,
+      texFilterMask: TexFilterFlags.rgbCopyRed | TexFilterFlags.rgbCopyGreen,
+    ));
   }
 
   void setInputFilePath(String value) {
@@ -65,6 +83,11 @@ class CoreCubit extends Cubit<CoreState> {
   }
 
   void setAlgorithm(String value) {
+    if (!CompressionAlgorithms.all.contains(value)) {
+      _log.e('Incorrect algorithm!');
+      return;
+    }
+
     emit(state.copyWith(selectedAlgorithm: value));
   }
 
