@@ -23,7 +23,12 @@ class CoreCubit extends Cubit<CoreState> {
   }
 
   void setInputFilePath(String value) {
-    emit(state.copyWith(inputFilePath: value));
+    if (state.automaticOutputFilePath) {
+      String outputValue = value.replaceAll(RegExp(r'\.\w+$'), '.dds');
+      emit(state.copyWith(inputFilePath: value, outputFilePath: outputValue));
+    } else {
+      emit(state.copyWith(inputFilePath: value));
+    }
   }
 
   void setOutputFilePath(String value) {
@@ -31,7 +36,16 @@ class CoreCubit extends Cubit<CoreState> {
   }
 
   void setAutomaticOutputFilePath(bool value) {
-    emit(state.copyWith(automaticOutputFilePath: value));
+    if (value) {
+      String outputValue =
+          state.inputFilePath.replaceAll(RegExp(r'\.\w+$'), '.dds');
+      emit(state.copyWith(
+        automaticOutputFilePath: value,
+        outputFilePath: outputValue,
+      ));
+    } else {
+      emit(state.copyWith(automaticOutputFilePath: value));
+    }
   }
 
   void setAlgorithm(String value) {

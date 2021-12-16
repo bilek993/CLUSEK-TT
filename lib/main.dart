@@ -35,6 +35,7 @@ class ClusekTTApp extends StatelessWidget {
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               primary: AppColors.accentColorLight,
+              onSurface: AppColors.white,
             ),
           ),
           outlinedButtonTheme: OutlinedButtonThemeData(
