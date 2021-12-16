@@ -77,6 +77,8 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(8.0, 16.0, 16.0, 16.0),
                 child: BlocBuilder<CoreCubit, CoreState>(
                   bloc: cubitCore,
+                  buildWhen: (previous, current) =>
+                      previous.inputFilePath != current.inputFilePath,
                   builder: (context, state) {
                     return ImagePreview(pathToFile: state.inputFilePath);
                   },
