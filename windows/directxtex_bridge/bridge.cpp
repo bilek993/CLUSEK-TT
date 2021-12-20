@@ -2,7 +2,7 @@
 #define DIRECTXTEX_BRIDGE_LIBRARY_CPP
 
 extern "C" __declspec(dllexport)
-double get_temperature()
+double getTemperature()
 {
     return 32.0F;
 }

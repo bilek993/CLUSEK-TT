@@ -1,4 +1,4 @@
-import 'package:clusek_tt/services/directx_tex_native_bridge_service.dart';
+import 'package:clusek_tt/services/directxtex_bridge_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 
@@ -12,7 +12,7 @@ class Locator {
 
     locator
         .registerLazySingleton<Logger>(() => Logger(printer: PrettyPrinter()));
-    locator.registerLazySingleton<DirectxTexNativeBridgeService>(
-        () => DirectxTexNativeBridgeService());
+    locator.registerLazySingleton<DirectxtexBridgeService>(
+        () => DirectxtexBridgeService());
   }
 }
