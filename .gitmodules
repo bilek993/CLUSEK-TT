@@ -1,0 +1,3 @@
+[submodule "windows/directxtex_bridge/DirectXTex"]
+	path = windows/directxtex_bridge/DirectXTex
+	url = https://github.com/microsoft/DirectXTex.git
