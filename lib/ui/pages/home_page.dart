@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: CoreBottomNavigationBar(
-        onConvertButtonPressed: () {},
+        onConvertButtonPressed: () => cubitCore.convert(),
       ),
     );
   }

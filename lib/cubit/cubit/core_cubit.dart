@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:clusek_tt/data/compression_algorithms.dart';
 import 'package:clusek_tt/data/tex_compress_flags.dart';
 import 'package:clusek_tt/data/tex_filter_flags.dart';
+import 'package:clusek_tt/services/directxtex_bridge_service.dart';
 import 'package:clusek_tt/services/locator.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:logger/logger.dart';
@@ -12,6 +13,7 @@ part 'core_state.dart';
 
 class CoreCubit extends Cubit<CoreState> {
   final Logger _log = locator.get();
+  final DirectxtexBridgeService _directxtexBridgeService = locator.get();
 
   CoreCubit() : super(const CoreState.initial());
 
@@ -114,5 +116,11 @@ class CoreCubit extends Cubit<CoreState> {
 
   void setDdsFlagsMask(int mask) {
     emit(state.copyWith(ddsFlagsMask: mask));
+  }
+
+  void convert() {
+    bool conversionSucceeded =
+        _directxtexBridgeService.compressAndConvertToDds();
+    _log.d('Conversion result: $conversionSucceeded');
   }
 }
