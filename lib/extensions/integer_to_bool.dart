@@ -1,5 +1,5 @@
 extension IntegerToBool on int {
-  bool nativeValueToBool() {
+  bool nativeIntegerToBool() {
     switch (this) {
       case 0:
         return false;
