@@ -1,7 +1,9 @@
 import 'dart:ffi';
 
 import 'package:clusek_tt/extensions/integer_to_bool.dart';
+import 'package:clusek_tt/services/locator.dart';
 import 'package:ffi/ffi.dart';
+import 'package:logger/logger.dart';
 
 typedef CompressAndConvertToDdsFunction = Uint8 Function(
   Pointer<Utf8>,
@@ -23,6 +25,8 @@ typedef CompressAndConvertToDdsFunctionDart = int Function(
 );
 
 class DirectxtexBridgeService {
+  final Logger _log = locator.get();
+
   late final DynamicLibrary _dynamicLibrary;
   late final CompressAndConvertToDdsFunctionDart
       _compressAndConvertToDdsFunction;
@@ -44,6 +48,15 @@ class DirectxtexBridgeService {
     int texCompressMask,
     int ddsFlagsMask,
   ) {
+    _log.d('Calling `compressAndConvertToDds` native function with params:');
+    _log.d('inputPath: $inputPath');
+    _log.d('outputPath: $outputPath');
+    _log.d('compressionAlgorithm: $compressionAlgorithm');
+    _log.d('wicFlagsMask: $wicFlagsMask');
+    _log.d('texFilterMask: $texFilterMask');
+    _log.d('texCompressMask: $texCompressMask');
+    _log.d('ddsFlagsMask: $ddsFlagsMask');
+
     int nativeFunctionResult = _compressAndConvertToDdsFunction(
       inputPath.toNativeUtf8(),
       outputPath.toNativeUtf8(),
