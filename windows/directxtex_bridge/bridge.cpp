@@ -18,18 +18,53 @@ bool compressAndConvertToDds(const char* inputPath,
 
     std::wstring inputPathAsWideString(inputPathAsString.cbegin(), inputPathAsString.cend());
     std::wstring outputPathAsWideString(outputPathAsString.cbegin(), outputPathAsString.cend());
-    std::wstring compressionAlgorithmAsWideString(compressionAlgorithmAsString.cbegin(), compressionAlgorithmAsString.cend());
+    std::wstring compressionAlgorithmAsWideString(compressionAlgorithmAsString.cbegin(),
+                                                  compressionAlgorithmAsString.cend());
 
-    DirectX::ScratchImage image;
-    HRESULT hr = LoadFromWICFile( inputPathAsWideString.c_str(), DirectX::WIC_FLAGS_NONE, nullptr, image );
+    const auto wicFlags = static_cast<DirectX::WIC_FLAGS>(wicFlagsMask);
+    const auto texFilter = static_cast<DirectX::TEX_FILTER_FLAGS>(texFilterMask);
+    const auto texCompress = static_cast<DirectX::TEX_COMPRESS_FLAGS>(texCompressMask);
+    const auto ddsFlags = static_cast<DirectX::DDS_FLAGS>(ddsFlagsMask);
 
-    hr = SaveToDDSFile(image.GetImages(),
-                       image.GetImageCount(),
-                       image.GetMetadata(),
-                       DirectX::DDS_FLAGS_NONE,
+    DirectX::ScratchImage inputImage;
+    DirectX::ScratchImage inputImageWithMipMaps;
+    DirectX::ScratchImage outputImage;
+
+    HRESULT hr = LoadFromWICFile(inputPathAsWideString.c_str(),
+                                 wicFlags,
+                                 nullptr,
+                                 inputImage);
+    if (FAILED(hr))
+        return false;
+
+    hr = GenerateMipMaps(inputImage.GetImages(),
+                         inputImage.GetImageCount(),
+                         inputImage.GetMetadata(),
+                         texFilter,
+                         0,
+                         inputImageWithMipMaps);
+    if (FAILED(hr))
+        return false;
+
+    hr = DirectX::Compress(inputImageWithMipMaps.GetImages(),
+                           inputImageWithMipMaps.GetImageCount(),
+                           inputImageWithMipMaps.GetMetadata(),
+                           DXGI_FORMAT::DXGI_FORMAT_BC7_UNORM, // TODO: Change this
+                           texCompress,
+                           0.5F,  // TODO: Change this
+                           outputImage);
+    if (FAILED(hr))
+        return false;
+
+    hr = SaveToDDSFile(outputImage.GetImages(),
+                       outputImage.GetImageCount(),
+                       outputImage.GetMetadata(),
+                       ddsFlags,
                        outputPathAsWideString.c_str());
+    if (FAILED(hr))
+        return false;
 
-    return false;
+    return true;
 }
 
 #endif //DIRECTXTEX_BRIDGE_LIBRARY_CPP
