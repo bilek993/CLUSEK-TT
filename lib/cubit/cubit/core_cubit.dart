@@ -119,8 +119,15 @@ class CoreCubit extends Cubit<CoreState> {
   }
 
   void convert() {
-    bool conversionSucceeded =
-        _directxtexBridgeService.compressAndConvertToDds();
+    bool conversionSucceeded = _directxtexBridgeService.compressAndConvertToDds(
+      state.inputFilePath,
+      state.outputFilePath,
+      state.selectedAlgorithm,
+      state.wicFlagsMask,
+      state.texFilterMask,
+      state.texCompressMask,
+      state.ddsFlagsMask,
+    );
     _log.d('Conversion result: $conversionSucceeded');
   }
 }
