@@ -47,6 +47,7 @@ class CoreCubit extends Cubit<CoreState> {
     _log.i('Setting combined data preset...');
     emit(const CoreState.initial(
       selectedAlgorithm: CompressionAlgorithms.bc7Unorm,
+      texCompressMask: TexCompressFlags.parallel,
     ));
   }
 
