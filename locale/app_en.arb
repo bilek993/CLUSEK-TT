@@ -23,5 +23,5 @@
   "combinedDataPresetName": "Combined Data Maps",
   "normalDataPresetName": "Normal Maps",
   "loadingTitle": "PROCESSING...",
-  "loadingSubtitle": "This process usually takes several minutes. Depending on the conversion setup, this process may take up to several hours."
+  "loadingSubtitle": "This process usually takes several minutes. Depending on the conversion configuration, this process may take up to several hours."
 }
