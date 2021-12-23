@@ -1,6 +1,6 @@
 import 'dart:ffi';
 
-import 'package:clusek_tt/extensions/integer_to_bool.dart';
+import 'package:clusek_tt/extensions/integer_to_bool_extension.dart';
 import 'package:clusek_tt/services/locator.dart';
 import 'package:ffi/ffi.dart';
 import 'package:logger/logger.dart';

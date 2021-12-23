@@ -1,4 +1,4 @@
-extension IntegerToBool on int {
+extension IntegerToBoolExtension on int {
   bool nativeIntegerToBool() {
     switch (this) {
       case 0:

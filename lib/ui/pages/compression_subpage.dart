@@ -1,7 +1,7 @@
 import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
 import 'package:clusek_tt/data/compression_algorithms.dart';
 import 'package:clusek_tt/data/tex_compress_flags.dart';
-import 'package:clusek_tt/extensions/integer_bitwise_operations_extensions.dart';
+import 'package:clusek_tt/extensions/integer_bitwise_operations_extension.dart';
 import 'package:clusek_tt/ui/widgets/outlined_dropdown_button.dart';
 import 'package:clusek_tt/ui/widgets/settings_item_with_title.dart';
 import 'package:flutter/material.dart';

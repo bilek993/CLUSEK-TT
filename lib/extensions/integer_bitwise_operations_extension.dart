@@ -1,4 +1,4 @@
-extension IntegerBitwiseOperationsExtensions on int {
+extension IntegerBitwiseOperationsExtension on int {
   bool checkFlag(int flag) {
     return this & flag == flag;
   }

@@ -1,4 +1,4 @@
-import 'package:clusek_tt/extensions/integer_bitwise_operations_extensions.dart';
+import 'package:clusek_tt/extensions/integer_bitwise_operations_extension.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
