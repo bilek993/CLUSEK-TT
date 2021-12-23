@@ -23,5 +23,5 @@
   "combinedDataPresetName": "Tekstury 'Combined Data'",
   "normalDataPresetName": "Tekstury 'Normal'",
   "loadingTitle": "PRZETWARZANIE...",
-  "loadingSubtitle": "Ten proces może zająć kilkanaście minut."
+  "loadingSubtitle": "Ten proces zajmuje zazwyczaj zająć kilkanaście minut. W przypadku niektórych konfiguracji konwersji, proces ten może zająć nawet kilka godzin."
 }
