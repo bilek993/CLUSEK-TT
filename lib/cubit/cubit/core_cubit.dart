@@ -127,6 +127,7 @@ class CoreCubit extends Cubit<CoreState> {
       state.texFilterMask,
       state.texCompressMask,
       state.ddsFlagsMask,
+      state.threshold,
     );
     _log.i('Conversion result: $conversionSucceeded');
   }

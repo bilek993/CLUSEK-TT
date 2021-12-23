@@ -13,6 +13,7 @@ typedef CompressAndConvertToDdsFunction = Uint8 Function(
   Uint64,
   Uint64,
   Uint64,
+  Double,
 );
 typedef CompressAndConvertToDdsFunctionDart = int Function(
   Pointer<Utf8>,
@@ -22,6 +23,7 @@ typedef CompressAndConvertToDdsFunctionDart = int Function(
   int,
   int,
   int,
+  double,
 );
 
 class DirectxtexBridgeService {
@@ -47,6 +49,7 @@ class DirectxtexBridgeService {
     int texFilterMask,
     int texCompressMask,
     int ddsFlagsMask,
+    double threshold,
   ) {
     _log.d('Calling `compressAndConvertToDds` native function with params:');
     _log.d('inputPath: $inputPath');
@@ -65,6 +68,7 @@ class DirectxtexBridgeService {
       texFilterMask,
       texCompressMask,
       ddsFlagsMask,
+      threshold,
     );
     return nativeFunctionResult.nativeIntegerToBool();
   }
