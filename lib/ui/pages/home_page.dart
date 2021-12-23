@@ -105,6 +105,8 @@ class HomePage extends StatelessWidget {
         ),
         BlocBuilder<CoreCubit, CoreState>(
           bloc: cubitCore,
+          buildWhen: (previous, current) =>
+              previous.loadingInProgress != current.loadingInProgress,
           builder: (context, state) {
             return LoadingInfo(
               enabled: state.loadingInProgress,
