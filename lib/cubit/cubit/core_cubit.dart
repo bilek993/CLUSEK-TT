@@ -118,17 +118,31 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(ddsFlagsMask: mask));
   }
 
-  void convert() {
-    bool conversionSucceeded = _directxtexBridgeService.compressAndConvertToDds(
-      state.inputFilePath,
-      state.outputFilePath,
-      state.selectedAlgorithm,
-      state.wicFlagsMask,
-      state.texFilterMask,
-      state.texCompressMask,
-      state.ddsFlagsMask,
-      state.threshold,
-    );
-    _log.i('Conversion result: $conversionSucceeded');
+  Future<void> convert() async {
+    if (state.loadingInProgress) {
+      return Future.value();
+    }
+
+    emit(state.copyWith(loadingInProgress: true));
+    try {
+      // Delay is required to perform all animations on the UI
+      await Future.delayed(const Duration(milliseconds: 250));
+      bool conversionSucceeded =
+          _directxtexBridgeService.compressAndConvertToDds(
+        state.inputFilePath,
+        state.outputFilePath,
+        state.selectedAlgorithm,
+        state.wicFlagsMask,
+        state.texFilterMask,
+        state.texCompressMask,
+        state.ddsFlagsMask,
+        state.threshold,
+      );
+      _log.i('Conversion result: $conversionSucceeded');
+    } catch (e) {
+      _log.e(e.toString());
+    } finally {
+      emit(state.copyWith(loadingInProgress: false));
+    }
   }
 }

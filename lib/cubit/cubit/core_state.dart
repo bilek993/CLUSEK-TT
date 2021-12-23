@@ -13,5 +13,6 @@ class CoreState with _$CoreState {
     @Default(0x0) int texFilterMask,
     @Default(0x0) int texCompressMask,
     @Default(0x0) int ddsFlagsMask,
+    @Default(false) bool loadingInProgress,
   }) = _Initial;
 }

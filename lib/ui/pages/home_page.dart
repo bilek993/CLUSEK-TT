@@ -88,8 +88,14 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: CoreBottomNavigationBar(
-        onConvertButtonPressed: () => cubitCore.convert(),
+      bottomNavigationBar: BlocBuilder<CoreCubit, CoreState>(
+        bloc: cubitCore,
+        builder: (context, state) {
+          return CoreBottomNavigationBar(
+            onConvertButtonPressed:
+                state.loadingInProgress ? null : () => cubitCore.convert(),
+          );
+        },
       ),
     );
   }

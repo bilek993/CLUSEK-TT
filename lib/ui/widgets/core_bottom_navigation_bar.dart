@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CoreBottomNavigationBar extends StatelessWidget {
-  final VoidCallback onConvertButtonPressed;
+  final VoidCallback? onConvertButtonPressed;
 
   const CoreBottomNavigationBar({
     Key? key,
-    required this.onConvertButtonPressed,
+    this.onConvertButtonPressed,
   }) : super(key: key);
 
   @override
