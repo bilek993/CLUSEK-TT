@@ -38,6 +38,11 @@ class ClusekTTApp extends StatelessWidget {
               onSurface: AppColors.white,
             ),
           ),
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+              primary: AppColors.accentColorLight,
+            ),
+          ),
           outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
               primary: AppColors.white,

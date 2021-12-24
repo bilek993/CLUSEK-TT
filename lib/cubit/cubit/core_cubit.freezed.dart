@@ -28,7 +28,8 @@ class _$CoreStateTearOff {
       int texFilterMask = 0x0,
       int texCompressMask = 0x0,
       int ddsFlagsMask = 0x0,
-      bool loadingInProgress = false}) {
+      bool loadingInProgress = false,
+      bool errorReportedFromNative = false}) {
     return _Initial(
       selectedSubpage: selectedSubpage,
       inputFilePath: inputFilePath,
@@ -41,6 +42,7 @@ class _$CoreStateTearOff {
       texCompressMask: texCompressMask,
       ddsFlagsMask: ddsFlagsMask,
       loadingInProgress: loadingInProgress,
+      errorReportedFromNative: errorReportedFromNative,
     );
   }
 }
@@ -61,6 +63,7 @@ mixin _$CoreState {
   int get texCompressMask => throw _privateConstructorUsedError;
   int get ddsFlagsMask => throw _privateConstructorUsedError;
   bool get loadingInProgress => throw _privateConstructorUsedError;
+  bool get errorReportedFromNative => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -75,7 +78,8 @@ mixin _$CoreState {
             int texFilterMask,
             int texCompressMask,
             int ddsFlagsMask,
-            bool loadingInProgress)
+            bool loadingInProgress,
+            bool errorReportedFromNative)
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -92,7 +96,8 @@ mixin _$CoreState {
             int texFilterMask,
             int texCompressMask,
             int ddsFlagsMask,
-            bool loadingInProgress)?
+            bool loadingInProgress,
+            bool errorReportedFromNative)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -109,7 +114,8 @@ mixin _$CoreState {
             int texFilterMask,
             int texCompressMask,
             int ddsFlagsMask,
-            bool loadingInProgress)?
+            bool loadingInProgress,
+            bool errorReportedFromNative)?
         initial,
     required TResult orElse(),
   }) =>
@@ -151,7 +157,8 @@ abstract class $CoreStateCopyWith<$Res> {
       int texFilterMask,
       int texCompressMask,
       int ddsFlagsMask,
-      bool loadingInProgress});
+      bool loadingInProgress,
+      bool errorReportedFromNative});
 }
 
 /// @nodoc
@@ -175,6 +182,7 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
     Object? texCompressMask = freezed,
     Object? ddsFlagsMask = freezed,
     Object? loadingInProgress = freezed,
+    Object? errorReportedFromNative = freezed,
   }) {
     return _then(_value.copyWith(
       selectedSubpage: selectedSubpage == freezed
@@ -221,6 +229,10 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
           ? _value.loadingInProgress
           : loadingInProgress // ignore: cast_nullable_to_non_nullable
               as bool,
+      errorReportedFromNative: errorReportedFromNative == freezed
+          ? _value.errorReportedFromNative
+          : errorReportedFromNative // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -241,7 +253,8 @@ abstract class _$InitialCopyWith<$Res> implements $CoreStateCopyWith<$Res> {
       int texFilterMask,
       int texCompressMask,
       int ddsFlagsMask,
-      bool loadingInProgress});
+      bool loadingInProgress,
+      bool errorReportedFromNative});
 }
 
 /// @nodoc
@@ -266,6 +279,7 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
     Object? texCompressMask = freezed,
     Object? ddsFlagsMask = freezed,
     Object? loadingInProgress = freezed,
+    Object? errorReportedFromNative = freezed,
   }) {
     return _then(_Initial(
       selectedSubpage: selectedSubpage == freezed
@@ -312,6 +326,10 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
           ? _value.loadingInProgress
           : loadingInProgress // ignore: cast_nullable_to_non_nullable
               as bool,
+      errorReportedFromNative: errorReportedFromNative == freezed
+          ? _value.errorReportedFromNative
+          : errorReportedFromNative // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -330,7 +348,8 @@ class _$_Initial implements _Initial {
       this.texFilterMask = 0x0,
       this.texCompressMask = 0x0,
       this.ddsFlagsMask = 0x0,
-      this.loadingInProgress = false});
+      this.loadingInProgress = false,
+      this.errorReportedFromNative = false});
 
   @JsonKey(defaultValue: 0)
   @override
@@ -365,10 +384,13 @@ class _$_Initial implements _Initial {
   @JsonKey(defaultValue: false)
   @override
   final bool loadingInProgress;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool errorReportedFromNative;
 
   @override
   String toString() {
-    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath, threshold: $threshold, selectedAlgorithm: $selectedAlgorithm, wicFlagsMask: $wicFlagsMask, texFilterMask: $texFilterMask, texCompressMask: $texCompressMask, ddsFlagsMask: $ddsFlagsMask, loadingInProgress: $loadingInProgress)';
+    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath, threshold: $threshold, selectedAlgorithm: $selectedAlgorithm, wicFlagsMask: $wicFlagsMask, texFilterMask: $texFilterMask, texCompressMask: $texCompressMask, ddsFlagsMask: $ddsFlagsMask, loadingInProgress: $loadingInProgress, errorReportedFromNative: $errorReportedFromNative)';
   }
 
   @override
@@ -396,7 +418,9 @@ class _$_Initial implements _Initial {
             const DeepCollectionEquality()
                 .equals(other.ddsFlagsMask, ddsFlagsMask) &&
             const DeepCollectionEquality()
-                .equals(other.loadingInProgress, loadingInProgress));
+                .equals(other.loadingInProgress, loadingInProgress) &&
+            const DeepCollectionEquality().equals(
+                other.errorReportedFromNative, errorReportedFromNative));
   }
 
   @override
@@ -412,7 +436,8 @@ class _$_Initial implements _Initial {
       const DeepCollectionEquality().hash(texFilterMask),
       const DeepCollectionEquality().hash(texCompressMask),
       const DeepCollectionEquality().hash(ddsFlagsMask),
-      const DeepCollectionEquality().hash(loadingInProgress));
+      const DeepCollectionEquality().hash(loadingInProgress),
+      const DeepCollectionEquality().hash(errorReportedFromNative));
 
   @JsonKey(ignore: true)
   @override
@@ -433,7 +458,8 @@ class _$_Initial implements _Initial {
             int texFilterMask,
             int texCompressMask,
             int ddsFlagsMask,
-            bool loadingInProgress)
+            bool loadingInProgress,
+            bool errorReportedFromNative)
         initial,
   }) {
     return initial(
@@ -447,7 +473,8 @@ class _$_Initial implements _Initial {
         texFilterMask,
         texCompressMask,
         ddsFlagsMask,
-        loadingInProgress);
+        loadingInProgress,
+        errorReportedFromNative);
   }
 
   @override
@@ -464,7 +491,8 @@ class _$_Initial implements _Initial {
             int texFilterMask,
             int texCompressMask,
             int ddsFlagsMask,
-            bool loadingInProgress)?
+            bool loadingInProgress,
+            bool errorReportedFromNative)?
         initial,
   }) {
     return initial?.call(
@@ -478,7 +506,8 @@ class _$_Initial implements _Initial {
         texFilterMask,
         texCompressMask,
         ddsFlagsMask,
-        loadingInProgress);
+        loadingInProgress,
+        errorReportedFromNative);
   }
 
   @override
@@ -495,7 +524,8 @@ class _$_Initial implements _Initial {
             int texFilterMask,
             int texCompressMask,
             int ddsFlagsMask,
-            bool loadingInProgress)?
+            bool loadingInProgress,
+            bool errorReportedFromNative)?
         initial,
     required TResult orElse(),
   }) {
@@ -511,7 +541,8 @@ class _$_Initial implements _Initial {
           texFilterMask,
           texCompressMask,
           ddsFlagsMask,
-          loadingInProgress);
+          loadingInProgress,
+          errorReportedFromNative);
     }
     return orElse();
   }
@@ -557,7 +588,8 @@ abstract class _Initial implements CoreState {
       int texFilterMask,
       int texCompressMask,
       int ddsFlagsMask,
-      bool loadingInProgress}) = _$_Initial;
+      bool loadingInProgress,
+      bool errorReportedFromNative}) = _$_Initial;
 
   @override
   int get selectedSubpage;
@@ -581,6 +613,8 @@ abstract class _Initial implements CoreState {
   int get ddsFlagsMask;
   @override
   bool get loadingInProgress;
+  @override
+  bool get errorReportedFromNative;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>

@@ -140,10 +140,17 @@ class CoreCubit extends Cubit<CoreState> {
         state.threshold,
       );
       _log.i('Conversion result: $conversionSucceeded');
+      if (!conversionSucceeded) {
+        emit(state.copyWith(errorReportedFromNative: true));
+      }
     } catch (e) {
       _log.e(e.toString());
+      emit(state.copyWith(errorReportedFromNative: true));
     } finally {
-      emit(state.copyWith(loadingInProgress: false));
+      emit(state.copyWith(
+        loadingInProgress: false,
+        errorReportedFromNative: false,
+      ));
     }
   }
 }

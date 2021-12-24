@@ -24,96 +24,125 @@ class HomePage extends StatelessWidget {
     var subpageItems = _getSubpageItems(context);
     var cubitCore = BlocProvider.of<CoreCubit>(context);
 
-    return Stack(
-      children: [
-        Scaffold(
-          body: Row(
-            children: [
-              Expanded(
-                flex: 7,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
-                    decoration: ShadowDecoration(),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: BlocBuilder<CoreCubit, CoreState>(
+    return BlocListener<CoreCubit, CoreState>(
+      bloc: cubitCore,
+      listenWhen: (previous, current) =>
+          previous.errorReportedFromNative != current.errorReportedFromNative &&
+          current.errorReportedFromNative,
+      listener: (context, state) {
+        showDialog<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              backgroundColor: AppColors.backgroundColor,
+              title: Text(AppLocalizations.of(context)!.errorAlertDialogTitle),
+              content:
+                  Text(AppLocalizations.of(context)!.errorAlertDialogMessage),
+              actions: <Widget>[
+                TextButton(
+                  child: Text(
+                      AppLocalizations.of(context)!.errorAlertDialogAction),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      },
+      child: Stack(
+        children: [
+          Scaffold(
+            body: Row(
+              children: [
+                Expanded(
+                  flex: 7,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 2.0, bottom: 2.0),
+                      decoration: ShadowDecoration(),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: BlocBuilder<CoreCubit, CoreState>(
+                              bloc: cubitCore,
+                              builder: (context, state) {
+                                return ListView.builder(
+                                  itemCount: subpageItems.length,
+                                  itemBuilder: (context, index) =>
+                                      SubmenuListItem(
+                                    textValue: subpageItems[index].title,
+                                    fillBackground:
+                                        index == state.selectedSubpage,
+                                    onTap: () => cubitCore.changePage(index),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          Container(
+                            width: 1.0,
+                            color: AppColors.separatorColor,
+                          ),
+                          BlocBuilder<CoreCubit, CoreState>(
                             bloc: cubitCore,
                             builder: (context, state) {
-                              return ListView.builder(
-                                itemCount: subpageItems.length,
-                                itemBuilder: (context, index) =>
-                                    SubmenuListItem(
-                                  textValue: subpageItems[index].title,
-                                  fillBackground:
-                                      index == state.selectedSubpage,
-                                  onTap: () => cubitCore.changePage(index),
-                                ),
+                              return Expanded(
+                                flex: 3,
+                                child: subpageItems[state.selectedSubpage],
                               );
                             },
                           ),
-                        ),
-                        Container(
-                          width: 1.0,
-                          color: AppColors.separatorColor,
-                        ),
-                        BlocBuilder<CoreCubit, CoreState>(
-                          bloc: cubitCore,
-                          builder: (context, state) {
-                            return Expanded(
-                              flex: 3,
-                              child: subpageItems[state.selectedSubpage],
-                            );
-                          },
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                flex: 4,
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 16.0, 16.0, 16.0),
-                    child: BlocBuilder<CoreCubit, CoreState>(
-                      bloc: cubitCore,
-                      buildWhen: (previous, current) =>
-                          previous.inputFilePath != current.inputFilePath,
-                      builder: (context, state) {
-                        return ImagePreview(pathToFile: state.inputFilePath);
-                      },
+                Expanded(
+                  flex: 4,
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(8.0, 16.0, 16.0, 16.0),
+                      child: BlocBuilder<CoreCubit, CoreState>(
+                        bloc: cubitCore,
+                        buildWhen: (previous, current) =>
+                            previous.inputFilePath != current.inputFilePath,
+                        builder: (context, state) {
+                          return ImagePreview(pathToFile: state.inputFilePath);
+                        },
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
+            bottomNavigationBar: BlocBuilder<CoreCubit, CoreState>(
+              bloc: cubitCore,
+              builder: (context, state) {
+                return CoreBottomNavigationBar(
+                  onConvertButtonPressed: state.loadingInProgress
+                      ? null
+                      : () => cubitCore.convert(),
+                );
+              },
+            ),
           ),
-          bottomNavigationBar: BlocBuilder<CoreCubit, CoreState>(
+          BlocBuilder<CoreCubit, CoreState>(
             bloc: cubitCore,
+            buildWhen: (previous, current) =>
+                previous.loadingInProgress != current.loadingInProgress,
             builder: (context, state) {
-              return CoreBottomNavigationBar(
-                onConvertButtonPressed:
-                    state.loadingInProgress ? null : () => cubitCore.convert(),
+              return LoadingInfo(
+                enabled: state.loadingInProgress,
               );
             },
           ),
-        ),
-        BlocBuilder<CoreCubit, CoreState>(
-          bloc: cubitCore,
-          buildWhen: (previous, current) =>
-              previous.loadingInProgress != current.loadingInProgress,
-          builder: (context, state) {
-            return LoadingInfo(
-              enabled: state.loadingInProgress,
-            );
-          },
-        ),
-      ],
+        ],
+      ),
     );
   }
 
