@@ -13,9 +13,9 @@ void main() {
   test("'easeOutQuartValue' should return around 1.0 for 1.0", () {
     // Given
     AnimationController animationControllerMock = MockAnimationController();
+    when(animationControllerMock.value).thenReturn(1.0);
 
     // When
-    when(animationControllerMock.value).thenReturn(1.0);
     double easeValue = animationControllerMock.easeOutQuartValue;
 
     // Then
@@ -25,9 +25,9 @@ void main() {
   test("'easeOutQuartValue' should return around 0.0 for 0.0", () {
     // Given
     AnimationController animationControllerMock = MockAnimationController();
+    when(animationControllerMock.value).thenReturn(0.0);
 
     // When
-    when(animationControllerMock.value).thenReturn(0.0);
     double easeValue = animationControllerMock.easeOutQuartValue;
 
     // Then
@@ -37,9 +37,9 @@ void main() {
   test("'easeOutQuartValue' should return around 0.93 for 0.5", () {
     // Given
     AnimationController animationControllerMock = MockAnimationController();
+    when(animationControllerMock.value).thenReturn(0.5);
 
     // When
-    when(animationControllerMock.value).thenReturn(0.5);
     double easeValue = animationControllerMock.easeOutQuartValue;
 
     // Then
