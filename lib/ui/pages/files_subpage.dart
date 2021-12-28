@@ -1,4 +1,4 @@
-import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
+import 'package:clusek_tt/cubit/core/core_cubit.dart';
 import 'package:clusek_tt/services/locator.dart';
 import 'package:clusek_tt/ui/widgets/settings_item_with_title.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';

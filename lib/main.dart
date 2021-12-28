@@ -1,4 +1,4 @@
-import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
+import 'package:clusek_tt/cubit/core/core_cubit.dart';
 import 'package:clusek_tt/resources/app_colors.dart';
 import 'package:clusek_tt/services/locator.dart';
 import 'package:clusek_tt/ui/pages/home_page.dart';

@@ -1,4 +1,4 @@
-import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
+import 'package:clusek_tt/cubit/core/core_cubit.dart';
 import 'package:clusek_tt/data/dds_flags.dart';
 import 'package:clusek_tt/extensions/integer_bitwise_operations_extension.dart';
 import 'package:clusek_tt/ui/widgets/settings_item_with_title.dart';

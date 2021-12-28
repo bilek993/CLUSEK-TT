@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:clusek_tt/cubit/cubit/core_cubit.dart';
+import 'package:clusek_tt/cubit/core/core_cubit.dart';
 import 'package:clusek_tt/data/compression_algorithms.dart';
 import 'package:clusek_tt/data/dds_flags.dart';
 import 'package:clusek_tt/data/tex_compress_flags.dart';
@@ -12,7 +12,7 @@ import 'package:logger/logger.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import 'core_cubit_test.mocks.dart';
+import './core_cubit_test.mocks.dart';
 
 @GenerateMocks([DirectxtexBridgeService])
 @GenerateMocks([Logger])
