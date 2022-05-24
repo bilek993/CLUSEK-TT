@@ -51,6 +51,65 @@ DXGI_FORMAT convertStringToDxgiFormat(const std::string& value)
         return DXGI_FORMAT::DXGI_FORMAT_UNKNOWN;
 }
 
+HRESULT loadImage(const std::wstring& inputFilePath,
+                  DirectX::WIC_FLAGS wicFlags,
+                  std::vector<DirectX::ScratchImage>& images)
+{
+    DirectX::ScratchImage inputImage{};
+    const auto hr = LoadFromWICFile(inputFilePath.c_str(),
+                                    wicFlags,
+                                    nullptr,
+                                    inputImage);
+
+    images.emplace_back(std::move(inputImage));
+    return hr;
+}
+
+HRESULT generateMipMaps(DirectX::TEX_FILTER_FLAGS texFilter,
+                        std::vector<DirectX::ScratchImage>& images)
+{
+    DirectX::ScratchImage imageWithMipMaps{};
+    const auto hr = GenerateMipMaps(images.back().GetImages(),
+                                    images.back().GetImageCount(),
+                                    images.back().GetMetadata(),
+                                    texFilter,
+                                    0,
+                                    imageWithMipMaps);
+
+    images.emplace_back(std::move(imageWithMipMaps));
+    return hr;
+}
+
+HRESULT compress(DXGI_FORMAT format,
+                 DirectX::TEX_FILTER_FLAGS texFilter,
+                 DirectX::TEX_COMPRESS_FLAGS texCompress,
+                 float threshold,
+                 std::vector<DirectX::ScratchImage>& images)
+{
+    DirectX::ScratchImage imageCompressed{};
+    const auto hr = DirectX::Compress(images.back().GetImages(),
+                                      images.back().GetImageCount(),
+                                      images.back().GetMetadata(),
+                                      format,
+                                      texCompress,
+                                      threshold,
+                                      imageCompressed);
+
+    images.emplace_back(std::move(imageCompressed));
+    return hr;
+}
+
+HRESULT saveImage(const std::wstring& outputFilePath,
+                  DirectX::DDS_FLAGS ddsFlags,
+                  const std::vector<DirectX::ScratchImage>& images)
+{
+    return SaveToDDSFile(images.back().GetImages(),
+                         images.back().GetImageCount(),
+                         images.back().GetMetadata(),
+                         ddsFlags,
+                         outputFilePath.c_str());
+}
+
 extern "C" __declspec(dllexport)
 bool compressAndConvertToDds(const char* inputPath,
                              const char* outputPath,
@@ -72,45 +131,20 @@ bool compressAndConvertToDds(const char* inputPath,
     const auto texFilter = static_cast<DirectX::TEX_FILTER_FLAGS>(texFilterMask);
     const auto texCompress = static_cast<DirectX::TEX_COMPRESS_FLAGS>(texCompressMask);
     const auto ddsFlags = static_cast<DirectX::DDS_FLAGS>(ddsFlagsMask);
-
     const auto format = convertStringToDxgiFormat(compressionAlgorithm);
 
-    DirectX::ScratchImage inputImage;
-    DirectX::ScratchImage inputImageWithMipMaps;
-    DirectX::ScratchImage outputImage;
+    std::vector<DirectX::ScratchImage> images{};
 
-    HRESULT hr = LoadFromWICFile(inputPathAsWideString.c_str(),
-                                 wicFlags,
-                                 nullptr,
-                                 inputImage);
-    if (FAILED(hr))
+    if (FAILED(loadImage(inputPathAsWideString, wicFlags, images)))
         return false;
 
-    hr = GenerateMipMaps(inputImage.GetImages(),
-                         inputImage.GetImageCount(),
-                         inputImage.GetMetadata(),
-                         texFilter,
-                         0,
-                         inputImageWithMipMaps);
-    if (FAILED(hr))
+    if (FAILED(generateMipMaps(texFilter, images)))
         return false;
 
-    hr = DirectX::Compress(inputImageWithMipMaps.GetImages(),
-                           inputImageWithMipMaps.GetImageCount(),
-                           inputImageWithMipMaps.GetMetadata(),
-                           format,
-                           texCompress,
-                           static_cast<float>(threshold),
-                           outputImage);
-    if (FAILED(hr))
+    if (FAILED(compress(format, texFilter, texCompress, static_cast<float>(threshold), images)))
         return false;
 
-    hr = SaveToDDSFile(outputImage.GetImages(),
-                       outputImage.GetImageCount(),
-                       outputImage.GetMetadata(),
-                       ddsFlags,
-                       outputPathAsWideString.c_str());
-    if (FAILED(hr))
+    if (FAILED(saveImage(outputPathAsWideString, ddsFlags, images)))
         return false;
 
     return true;
