@@ -25,7 +25,9 @@ class _$CoreStateTearOff {
       double threshold = 0.5,
       String selectedAlgorithm = 'DXGI_FORMAT_BC7_UNORM',
       int wicFlagsMask = 0x0,
+      bool mipmapEnabled = true,
       int texFilterMask = 0x0,
+      bool compressionEnabled = true,
       int texCompressMask = 0x0,
       int ddsFlagsMask = 0x0,
       bool loadingInProgress = false,
@@ -38,7 +40,9 @@ class _$CoreStateTearOff {
       threshold: threshold,
       selectedAlgorithm: selectedAlgorithm,
       wicFlagsMask: wicFlagsMask,
+      mipmapEnabled: mipmapEnabled,
       texFilterMask: texFilterMask,
+      compressionEnabled: compressionEnabled,
       texCompressMask: texCompressMask,
       ddsFlagsMask: ddsFlagsMask,
       loadingInProgress: loadingInProgress,
@@ -59,7 +63,9 @@ mixin _$CoreState {
   double get threshold => throw _privateConstructorUsedError;
   String get selectedAlgorithm => throw _privateConstructorUsedError;
   int get wicFlagsMask => throw _privateConstructorUsedError;
+  bool get mipmapEnabled => throw _privateConstructorUsedError;
   int get texFilterMask => throw _privateConstructorUsedError;
+  bool get compressionEnabled => throw _privateConstructorUsedError;
   int get texCompressMask => throw _privateConstructorUsedError;
   int get ddsFlagsMask => throw _privateConstructorUsedError;
   bool get loadingInProgress => throw _privateConstructorUsedError;
@@ -75,7 +81,9 @@ mixin _$CoreState {
             double threshold,
             String selectedAlgorithm,
             int wicFlagsMask,
+            bool mipmapEnabled,
             int texFilterMask,
+            bool compressionEnabled,
             int texCompressMask,
             int ddsFlagsMask,
             bool loadingInProgress,
@@ -93,7 +101,9 @@ mixin _$CoreState {
             double threshold,
             String selectedAlgorithm,
             int wicFlagsMask,
+            bool mipmapEnabled,
             int texFilterMask,
+            bool compressionEnabled,
             int texCompressMask,
             int ddsFlagsMask,
             bool loadingInProgress,
@@ -111,7 +121,9 @@ mixin _$CoreState {
             double threshold,
             String selectedAlgorithm,
             int wicFlagsMask,
+            bool mipmapEnabled,
             int texFilterMask,
+            bool compressionEnabled,
             int texCompressMask,
             int ddsFlagsMask,
             bool loadingInProgress,
@@ -154,7 +166,9 @@ abstract class $CoreStateCopyWith<$Res> {
       double threshold,
       String selectedAlgorithm,
       int wicFlagsMask,
+      bool mipmapEnabled,
       int texFilterMask,
+      bool compressionEnabled,
       int texCompressMask,
       int ddsFlagsMask,
       bool loadingInProgress,
@@ -178,7 +192,9 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
     Object? threshold = freezed,
     Object? selectedAlgorithm = freezed,
     Object? wicFlagsMask = freezed,
+    Object? mipmapEnabled = freezed,
     Object? texFilterMask = freezed,
+    Object? compressionEnabled = freezed,
     Object? texCompressMask = freezed,
     Object? ddsFlagsMask = freezed,
     Object? loadingInProgress = freezed,
@@ -213,10 +229,18 @@ class _$CoreStateCopyWithImpl<$Res> implements $CoreStateCopyWith<$Res> {
           ? _value.wicFlagsMask
           : wicFlagsMask // ignore: cast_nullable_to_non_nullable
               as int,
+      mipmapEnabled: mipmapEnabled == freezed
+          ? _value.mipmapEnabled
+          : mipmapEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
       texFilterMask: texFilterMask == freezed
           ? _value.texFilterMask
           : texFilterMask // ignore: cast_nullable_to_non_nullable
               as int,
+      compressionEnabled: compressionEnabled == freezed
+          ? _value.compressionEnabled
+          : compressionEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
       texCompressMask: texCompressMask == freezed
           ? _value.texCompressMask
           : texCompressMask // ignore: cast_nullable_to_non_nullable
@@ -250,7 +274,9 @@ abstract class _$InitialCopyWith<$Res> implements $CoreStateCopyWith<$Res> {
       double threshold,
       String selectedAlgorithm,
       int wicFlagsMask,
+      bool mipmapEnabled,
       int texFilterMask,
+      bool compressionEnabled,
       int texCompressMask,
       int ddsFlagsMask,
       bool loadingInProgress,
@@ -275,7 +301,9 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
     Object? threshold = freezed,
     Object? selectedAlgorithm = freezed,
     Object? wicFlagsMask = freezed,
+    Object? mipmapEnabled = freezed,
     Object? texFilterMask = freezed,
+    Object? compressionEnabled = freezed,
     Object? texCompressMask = freezed,
     Object? ddsFlagsMask = freezed,
     Object? loadingInProgress = freezed,
@@ -310,10 +338,18 @@ class __$InitialCopyWithImpl<$Res> extends _$CoreStateCopyWithImpl<$Res>
           ? _value.wicFlagsMask
           : wicFlagsMask // ignore: cast_nullable_to_non_nullable
               as int,
+      mipmapEnabled: mipmapEnabled == freezed
+          ? _value.mipmapEnabled
+          : mipmapEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
       texFilterMask: texFilterMask == freezed
           ? _value.texFilterMask
           : texFilterMask // ignore: cast_nullable_to_non_nullable
               as int,
+      compressionEnabled: compressionEnabled == freezed
+          ? _value.compressionEnabled
+          : compressionEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
       texCompressMask: texCompressMask == freezed
           ? _value.texCompressMask
           : texCompressMask // ignore: cast_nullable_to_non_nullable
@@ -345,7 +381,9 @@ class _$_Initial implements _Initial {
       this.threshold = 0.5,
       this.selectedAlgorithm = 'DXGI_FORMAT_BC7_UNORM',
       this.wicFlagsMask = 0x0,
+      this.mipmapEnabled = true,
       this.texFilterMask = 0x0,
+      this.compressionEnabled = true,
       this.texCompressMask = 0x0,
       this.ddsFlagsMask = 0x0,
       this.loadingInProgress = false,
@@ -372,9 +410,15 @@ class _$_Initial implements _Initial {
   @JsonKey(defaultValue: 0x0)
   @override
   final int wicFlagsMask;
+  @JsonKey(defaultValue: true)
+  @override
+  final bool mipmapEnabled;
   @JsonKey(defaultValue: 0x0)
   @override
   final int texFilterMask;
+  @JsonKey(defaultValue: true)
+  @override
+  final bool compressionEnabled;
   @JsonKey(defaultValue: 0x0)
   @override
   final int texCompressMask;
@@ -390,7 +434,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath, threshold: $threshold, selectedAlgorithm: $selectedAlgorithm, wicFlagsMask: $wicFlagsMask, texFilterMask: $texFilterMask, texCompressMask: $texCompressMask, ddsFlagsMask: $ddsFlagsMask, loadingInProgress: $loadingInProgress, errorReportedFromNative: $errorReportedFromNative)';
+    return 'CoreState.initial(selectedSubpage: $selectedSubpage, inputFilePath: $inputFilePath, outputFilePath: $outputFilePath, automaticOutputFilePath: $automaticOutputFilePath, threshold: $threshold, selectedAlgorithm: $selectedAlgorithm, wicFlagsMask: $wicFlagsMask, mipmapEnabled: $mipmapEnabled, texFilterMask: $texFilterMask, compressionEnabled: $compressionEnabled, texCompressMask: $texCompressMask, ddsFlagsMask: $ddsFlagsMask, loadingInProgress: $loadingInProgress, errorReportedFromNative: $errorReportedFromNative)';
   }
 
   @override
@@ -412,7 +456,11 @@ class _$_Initial implements _Initial {
             const DeepCollectionEquality()
                 .equals(other.wicFlagsMask, wicFlagsMask) &&
             const DeepCollectionEquality()
+                .equals(other.mipmapEnabled, mipmapEnabled) &&
+            const DeepCollectionEquality()
                 .equals(other.texFilterMask, texFilterMask) &&
+            const DeepCollectionEquality()
+                .equals(other.compressionEnabled, compressionEnabled) &&
             const DeepCollectionEquality()
                 .equals(other.texCompressMask, texCompressMask) &&
             const DeepCollectionEquality()
@@ -433,7 +481,9 @@ class _$_Initial implements _Initial {
       const DeepCollectionEquality().hash(threshold),
       const DeepCollectionEquality().hash(selectedAlgorithm),
       const DeepCollectionEquality().hash(wicFlagsMask),
+      const DeepCollectionEquality().hash(mipmapEnabled),
       const DeepCollectionEquality().hash(texFilterMask),
+      const DeepCollectionEquality().hash(compressionEnabled),
       const DeepCollectionEquality().hash(texCompressMask),
       const DeepCollectionEquality().hash(ddsFlagsMask),
       const DeepCollectionEquality().hash(loadingInProgress),
@@ -455,7 +505,9 @@ class _$_Initial implements _Initial {
             double threshold,
             String selectedAlgorithm,
             int wicFlagsMask,
+            bool mipmapEnabled,
             int texFilterMask,
+            bool compressionEnabled,
             int texCompressMask,
             int ddsFlagsMask,
             bool loadingInProgress,
@@ -470,7 +522,9 @@ class _$_Initial implements _Initial {
         threshold,
         selectedAlgorithm,
         wicFlagsMask,
+        mipmapEnabled,
         texFilterMask,
+        compressionEnabled,
         texCompressMask,
         ddsFlagsMask,
         loadingInProgress,
@@ -488,7 +542,9 @@ class _$_Initial implements _Initial {
             double threshold,
             String selectedAlgorithm,
             int wicFlagsMask,
+            bool mipmapEnabled,
             int texFilterMask,
+            bool compressionEnabled,
             int texCompressMask,
             int ddsFlagsMask,
             bool loadingInProgress,
@@ -503,7 +559,9 @@ class _$_Initial implements _Initial {
         threshold,
         selectedAlgorithm,
         wicFlagsMask,
+        mipmapEnabled,
         texFilterMask,
+        compressionEnabled,
         texCompressMask,
         ddsFlagsMask,
         loadingInProgress,
@@ -521,7 +579,9 @@ class _$_Initial implements _Initial {
             double threshold,
             String selectedAlgorithm,
             int wicFlagsMask,
+            bool mipmapEnabled,
             int texFilterMask,
+            bool compressionEnabled,
             int texCompressMask,
             int ddsFlagsMask,
             bool loadingInProgress,
@@ -538,7 +598,9 @@ class _$_Initial implements _Initial {
           threshold,
           selectedAlgorithm,
           wicFlagsMask,
+          mipmapEnabled,
           texFilterMask,
+          compressionEnabled,
           texCompressMask,
           ddsFlagsMask,
           loadingInProgress,
@@ -585,7 +647,9 @@ abstract class _Initial implements CoreState {
       double threshold,
       String selectedAlgorithm,
       int wicFlagsMask,
+      bool mipmapEnabled,
       int texFilterMask,
+      bool compressionEnabled,
       int texCompressMask,
       int ddsFlagsMask,
       bool loadingInProgress,
@@ -606,7 +670,11 @@ abstract class _Initial implements CoreState {
   @override
   int get wicFlagsMask;
   @override
+  bool get mipmapEnabled;
+  @override
   int get texFilterMask;
+  @override
+  bool get compressionEnabled;
   @override
   int get texCompressMask;
   @override
