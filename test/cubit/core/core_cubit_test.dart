@@ -195,11 +195,29 @@ void main() {
   );
 
   blocTest(
+    "'setMipmapEnabled' should set enabled status to proper value",
+    build: () => CoreCubit(),
+    act: (CoreCubit cubit) => cubit.setMipmapEnabled(true),
+    expect: () => [
+      const CoreState.initial(mipmapEnabled: true),
+    ],
+  );
+
+  blocTest(
     "'setTexFilterMask' should set mask to proper value",
     build: () => CoreCubit(),
     act: (CoreCubit cubit) => cubit.setTexFilterMask(TexFilterFlags.box),
     expect: () => [
       const CoreState.initial(texFilterMask: TexFilterFlags.box),
+    ],
+  );
+
+  blocTest(
+    "'setCompressionEnabled' should set enabled status to proper value",
+    build: () => CoreCubit(),
+    act: (CoreCubit cubit) => cubit.setCompressionEnabled(true),
+    expect: () => [
+      const CoreState.initial(compressionEnabled: true),
     ],
   );
 

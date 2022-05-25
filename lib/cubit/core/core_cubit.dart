@@ -107,8 +107,16 @@ class CoreCubit extends Cubit<CoreState> {
     emit(state.copyWith(wicFlagsMask: mask));
   }
 
+  void setMipmapEnabled(bool enabled) {
+    emit(state.copyWith(mipmapEnabled: enabled));
+  }
+
   void setTexFilterMask(int mask) {
     emit(state.copyWith(texFilterMask: mask));
+  }
+
+  void setCompressionEnabled(bool enabled) {
+    emit(state.copyWith(compressionEnabled: enabled));
   }
 
   void setTexCompressMask(int mask) {
