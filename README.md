@@ -9,7 +9,7 @@ CLUSEK-TT
 
 To be able to build from source, you need to have:
 
-- Flutter 2.5.3
+- Flutter 2.10.5
 - Visual Studio 2019 with C++ compiler
 - Windows OS
 
