@@ -246,12 +246,12 @@ void main() {
     act: (CoreCubit cubit) => cubit.convert(),
     setUp: () {
       when(_mockedDirectxtexBridgeService.compressAndConvertToDds(
-              '', '', 'DXGI_FORMAT_BC7_UNORM', 0, 0, 0, 0, 0.5))
+              '', '', 'DXGI_FORMAT_BC7_UNORM', 0, true, 0, true, 0, 0, 0.5))
           .thenReturn(true);
     },
     verify: (cubit) => verify(
             _mockedDirectxtexBridgeService.compressAndConvertToDds(
-                '', '', 'DXGI_FORMAT_BC7_UNORM', 0, 0, 0, 0, 0.5))
+                '', '', 'DXGI_FORMAT_BC7_UNORM', 0, true, 0, true, 0, 0, 0.5))
         .called(1),
     expect: () => [
       const CoreState.initial(loadingInProgress: true),
@@ -269,7 +269,9 @@ void main() {
         '',
         'DXGI_FORMAT_BC7_UNORM',
         0,
+        true,
         0,
+        true,
         0,
         0,
         0.5,
@@ -277,7 +279,7 @@ void main() {
     },
     verify: (cubit) => verify(
             _mockedDirectxtexBridgeService.compressAndConvertToDds(
-                '', '', 'DXGI_FORMAT_BC7_UNORM', 0, 0, 0, 0, 0.5))
+                '', '', 'DXGI_FORMAT_BC7_UNORM', 0, true, 0, true, 0, 0, 0.5))
         .called(1),
     expect: () => [
       const CoreState.initial(loadingInProgress: true),

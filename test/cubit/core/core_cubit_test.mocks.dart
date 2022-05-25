@@ -30,7 +30,9 @@ class MockDirectxtexBridgeService extends _i1.Mock
           String? outputPath,
           String? compressionAlgorithm,
           int? wicFlagsMask,
+          bool? mipmapEnabled,
           int? texFilterMask,
+          bool? compressionEnabled,
           int? texCompressMask,
           int? ddsFlagsMask,
           double? threshold) =>
@@ -40,7 +42,9 @@ class MockDirectxtexBridgeService extends _i1.Mock
             outputPath,
             compressionAlgorithm,
             wicFlagsMask,
+            mipmapEnabled,
             texFilterMask,
+            compressionEnabled,
             texCompressMask,
             ddsFlagsMask,
             threshold
