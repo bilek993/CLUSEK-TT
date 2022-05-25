@@ -26,5 +26,6 @@
   "loadingSubtitle": "Ten proces zajmuje zazwyczaj kilkanaście minut. W przypadku niektórych konfiguracji konwersji, proces ten może zająć nawet kilka godzin.",
   "errorAlertDialogTitle": "Wystąpił błąd",
   "errorAlertDialogMessage": "Podczas konwersji pliku nastąpił krytyczny błąd. Zweryfikuj ustawienia i spróbuj ponownie.",
-  "errorAlertDialogAction": "Zamknij"
+  "errorAlertDialogAction": "Zamknij",
+  "enabled": "Włączone"
 }

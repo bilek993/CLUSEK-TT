@@ -26,5 +26,6 @@
   "loadingSubtitle": "This process usually takes several minutes. Depending on the conversion configuration, this process may take up to several hours.",
   "errorAlertDialogTitle": "Error",
   "errorAlertDialogMessage": "A fatal error occurred while converting the texture file. Verify the settings and try again.",
-  "errorAlertDialogAction": "Close"
+  "errorAlertDialogAction": "Close",
+  "enabled": "Enabled"
 }
