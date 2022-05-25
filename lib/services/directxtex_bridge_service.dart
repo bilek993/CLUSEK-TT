@@ -10,7 +10,9 @@ typedef CompressAndConvertToDdsFunction = Uint8 Function(
   Pointer<Utf8>,
   Pointer<Utf8>,
   Uint64,
+  Bool,
   Uint64,
+  Bool,
   Uint64,
   Uint64,
   Double,
@@ -20,7 +22,9 @@ typedef CompressAndConvertToDdsFunctionDart = int Function(
   Pointer<Utf8>,
   Pointer<Utf8>,
   int,
+  bool,
   int,
+  bool,
   int,
   int,
   double,
@@ -46,7 +50,9 @@ class DirectxtexBridgeService {
     String outputPath,
     String compressionAlgorithm,
     int wicFlagsMask,
+    bool mipmapEnabled,
     int texFilterMask,
+    bool compressionEnabled,
     int texCompressMask,
     int ddsFlagsMask,
     double threshold,
@@ -56,16 +62,21 @@ class DirectxtexBridgeService {
     _log.d('outputPath: $outputPath');
     _log.d('compressionAlgorithm: $compressionAlgorithm');
     _log.d('wicFlagsMask: $wicFlagsMask');
+    _log.d('mipmapEnabled: $mipmapEnabled');
     _log.d('texFilterMask: $texFilterMask');
+    _log.d('compressionEnabled: $compressionEnabled');
     _log.d('texCompressMask: $texCompressMask');
     _log.d('ddsFlagsMask: $ddsFlagsMask');
+    _log.d('threshold: $threshold');
 
     int nativeFunctionResult = _compressAndConvertToDdsFunction(
       inputPath.toNativeUtf8(),
       outputPath.toNativeUtf8(),
       compressionAlgorithm.toNativeUtf8(),
       wicFlagsMask,
+      mipmapEnabled,
       texFilterMask,
+      compressionEnabled,
       texCompressMask,
       ddsFlagsMask,
       threshold,
