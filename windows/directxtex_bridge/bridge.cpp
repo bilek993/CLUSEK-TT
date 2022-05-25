@@ -140,11 +140,17 @@ bool compressAndConvertToDds(const char* inputPath,
     if (FAILED(loadImage(inputPathAsWideString, wicFlags, images)))
         return false;
 
-    if (FAILED(generateMipMaps(texFilter, images)))
-        return false;
+    if (mipmapEnabled)
+    {
+        if (FAILED(generateMipMaps(texFilter, images)))
+            return false;
+    }
 
-    if (FAILED(compress(format, texFilter, texCompress, static_cast<float>(threshold), images)))
-        return false;
+    if (compressionEnabled)
+    {
+        if (FAILED(compress(format, texFilter, texCompress, static_cast<float>(threshold), images)))
+            return false;
+    }
 
     if (FAILED(saveImage(outputPathAsWideString, ddsFlags, images)))
         return false;
